@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Content from "./components/Content";
+import React, { Component } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Jumbotron from './components/Jumbotron';
+import Content from './components/Content';
 
 class App extends Component {
   state = {};
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <>
         <Header />
+        <Jumbotron />
         <Content />
         <Footer />
       </>
