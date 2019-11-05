@@ -2,38 +2,7 @@ import React from 'react';
 import Beer from './Beer';
 
 const Beers = () => {
-  let a = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-  ];
+  let a = [1, 2, 3, 4, 5];
   //   a = [];
   console.log(a.length);
   const renderCards = () => {

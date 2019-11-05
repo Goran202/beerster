@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import symbol from '../assets/symbol.png';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 const Header = () => {
   //   return <header>header</header>;
@@ -24,22 +25,19 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/home">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/favorites">
                   Favorites
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/join">
                   Join
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
