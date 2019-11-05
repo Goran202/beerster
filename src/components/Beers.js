@@ -6,9 +6,9 @@ const Beers = () => {
   //   a = [];
   console.log(a.length);
   const renderCards = () => {
-    return a.map((item) => {
+    return a.map((item, i) => {
       return (
-        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <div key={i} className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
           <Beer />
         </div>
       );

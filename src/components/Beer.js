@@ -1,5 +1,4 @@
 import React from 'react';
-import pattern_background from '../assets/pattern_background.png';
 
 const Beer = () => {
   return (
