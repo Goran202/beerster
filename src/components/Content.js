@@ -3,7 +3,7 @@ import Beers from './Beers';
 import Crate from './Crate';
 import pattern_background from '../assets/pattern_background.png';
 
-const Content = () => {
+const Content = (props) => {
   return (
     <div
       className="container"
@@ -13,7 +13,7 @@ const Content = () => {
     >
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-8">
-          <h2>BEER(s)</h2>
+          <h2>{props.title}</h2>
           <Beers />
         </div>
         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">

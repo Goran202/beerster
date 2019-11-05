@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = () => {
+const Modal = (props) => {
   return (
     <>
       {/* <button
@@ -12,6 +12,7 @@ const Modal = () => {
         Launch demo modal
       </button> */}
 
+      {/* First modal */}
       <div
         className="modal fade"
         id="exampleModal"

@@ -5,6 +5,7 @@ import Jumbotron from './components/Jumbotron';
 import Content from './components/Content';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Modal from './components/Modal';
+import Join from './components/Join';
 
 class App extends Component {
   state = {};
@@ -13,22 +14,22 @@ class App extends Component {
       <>
         <Router>
           <Header />
-          <Modal />
+          <Modal type={'exampleModal'} />
           <Switch>
             <Route exact path="/">
               <Jumbotron />
-              <Content />
+              <Content title="Beer" />
             </Route>
             <Route exact path="/home">
               <Jumbotron />
-              <Content />
+              <Content title="Beer" />
             </Route>
             <Route exact path="/favorites">
-              Favorites page
               <Jumbotron />
+              <Content title="My Favourite beers" />
             </Route>
             <Route exact path="/join">
-              <Content />
+              <Join />
             </Route>
           </Switch>
           <Footer />
