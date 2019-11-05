@@ -1,4 +1,5 @@
 import React from 'react';
+import crate from '../assets/crate.png';
 
 const Crate = () => {
   return (
@@ -12,6 +13,9 @@ const Crate = () => {
       <a className="navbar-brand" href="#">
         THREE
       </a>
+      <img src={crate} alt="crate"></img>
+      <p>Add a beer to have it appera in the crate.</p>
+      <p>- Captain Obvious</p>
     </nav>
   );
 };

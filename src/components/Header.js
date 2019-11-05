@@ -6,8 +6,6 @@ const Header = () => {
   //   return <header>header</header>;
   return (
     <>
-      {/* Navigation */}
-      {/* <nav className="navbar navbar-md-expand navbar-light bg-light"></nav> */}
       <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
         <div className="container-fluid">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

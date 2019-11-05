@@ -2,19 +2,62 @@ import React from 'react';
 import Beer from './Beer';
 
 const Beers = () => {
-  const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  let a = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+  ];
+  //   a = [];
   console.log(a.length);
+  const renderCards = () => {
+    return a.map((item) => {
+      return (
+        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+          <Beer />
+        </div>
+      );
+    });
+  };
 
   return (
-    <div>
-      {a.map((item) => (
+    <div className="container-fluid">
+      <div className="row">{renderCards()}</div>
+    </div>
+  );
+
+  /* {a.map((item) => (
         <div>
           <Beer />
           <p>item</p>
         </div>
-      ))}
-    </div>
-  );
+      ))} */
 };
 
 export default Beers;
