@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import symbol from '../assets/symbol.png';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   //   return <header>header</header>;

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Jumbotron from './components/Jumbotron';
 import Content from './components/Content';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Modal from './components/Modal';
 import Join from './components/Join';
 import punkApi from './apis/punkApi';
