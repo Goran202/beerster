@@ -2,20 +2,29 @@ import React from 'react';
 
 const Beer = () => {
   return (
-    <div className="card" style={{}}>
-      <input type="checkbox"></input>
-      <img
-        style={{}}
-        className="card-img-top"
-        src="https://images.punkapi.com/v2/192.png"
-        alt="Card"
-      />
-      <div className="card-body">
-        <h4 className="card-title">PUNK IPA</h4>
-        <p className="card-text">IBU: ___</p>
-        <p className="card-text">ABV: ___</p>
-      </div>
-    </div>
+    <>
+      <button
+        type="button"
+        // className="btn btn-primary"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        <div className="card" style={{}}>
+          <input type="checkbox"></input>
+          <img
+            style={{}}
+            className="card-img-top"
+            src="https://images.punkapi.com/v2/192.png"
+            alt="Card"
+          />
+          <div className="card-body">
+            <h4 className="card-title">PUNK IPA</h4>
+            <p className="card-text">IBU: ___</p>
+            <p className="card-text">ABV: ___</p>
+          </div>
+        </div>
+      </button>
+    </>
   );
 };
 

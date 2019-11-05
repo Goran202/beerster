@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Jumbotron from './components/Jumbotron';
 import Content from './components/Content';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Modal from './components/Modal';
 
 class App extends Component {
   state = {};
@@ -12,6 +13,7 @@ class App extends Component {
       <>
         <Router>
           <Header />
+          <Modal />
           <Switch>
             <Route exact path="/">
               <Jumbotron />
