@@ -12,20 +12,21 @@ class App extends Component {
   state = {
     beerList: [],
     favBeerList: [],
+    selectedBeer: { name: 'beername', id: 66 },
   };
 
   componentDidMount() {
     punkApi
       .get('beers')
       .then((response) => {
-        console.log(response);
-        this.setState({ beerList: response.data });
+        //console.log(response);
+        this.setState({ beerList: response.data, selectedBeer: response.data[0] });
       })
       .catch((error) => {
         console.log(error);
       });
 
-    // const local = localStorage.getItem('myListLocal');
+    // const local = localStorage.getItem('favBeerListLocal');
     // if (local) {
     //   const localJSON = JSON.parse(local);
     //   this.setState({
@@ -34,22 +35,42 @@ class App extends Component {
     // }
   }
 
+  onBeerClick = (id_arg) => {
+    let tempState = { ...this.state };
+    let tempBeer = tempState.beerList.find((beer) => beer.id === id_arg);
+    this.setState({ selectedBeer: tempBeer });
+  };
+
   render() {
+    // this.setState({ selectedBeer: this.state.beerList[0] });
+
     return (
       <>
         <Router>
           <Header />
-          <Modal type={'exampleModal'} />
+          <Modal beer={this.state.selectedBeer} type={'exampleModal'} />
           <Jumbotron />
           <Switch>
             <Route exact path="/">
-              <Content title="Beer" />
+              <Content
+                beerList={this.state.beerList}
+                title="Beer"
+                onBeerClick={this.onBeerClick}
+              />
             </Route>
             <Route exact path="/home">
-              <Content title="Beer" />
+              <Content
+                beerList={this.state.beerList}
+                title="Beer"
+                onBeerClick={this.onBeerClick}
+              />
             </Route>
             <Route exact path="/favorites">
-              <Content title="My Favourite beers" />
+              <Content
+                beerList={this.state.favBeerList}
+                title="My Favourite beers"
+                onBeerClick={this.onBeerClick}
+              />
             </Route>
             <Route exact path="/join">
               <Join />
