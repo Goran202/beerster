@@ -7,8 +7,9 @@ const Header = () => {
   //   return <header>header</header>;
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-        <div className="container-fluid">
+      {/* <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top"> */}
+      <nav className="navbar navbar-expand-md navbar-dark sticky-top">
+        <div className="container">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className="navbar-brand" href="#">
             <img src={symbol} alt="symbol"></img>

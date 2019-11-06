@@ -14,8 +14,12 @@ const Crate = () => {
         THREE
       </a>
       <img src={crate} alt="crate"></img>
-      <p>Add a beer to have it appera in the crate.</p>
-      <p>- Captain Obvious</p>
+      <blockquote class="blockquote text-center">
+        <p>Add a beer to have it appear in the crate.</p>
+        <footer class="blockquote-footer">
+          <cite title="Captain Obvious">Captain Obvious</cite>
+        </footer>
+      </blockquote>
     </nav>
   );
 };

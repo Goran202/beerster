@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Modal from './components/Modal';
 import Join from './components/Join';
 import punkApi from './apis/punkApi';
+import './style.css';
 
 class App extends Component {
   state = {
@@ -46,38 +47,40 @@ class App extends Component {
 
     return (
       <>
-        <Router>
-          <Header />
-          <Modal beer={this.state.selectedBeer} type={'exampleModal'} />
-          <Jumbotron />
-          <Switch>
-            <Route exact path="/">
-              <Content
-                beerList={this.state.beerList}
-                title="Beer"
-                onBeerClick={this.onBeerClick}
-              />
-            </Route>
-            <Route exact path="/home">
-              <Content
-                beerList={this.state.beerList}
-                title="Beer"
-                onBeerClick={this.onBeerClick}
-              />
-            </Route>
-            <Route exact path="/favorites">
-              <Content
-                beerList={this.state.favBeerList}
-                title="My Favourite beers"
-                onBeerClick={this.onBeerClick}
-              />
-            </Route>
-            <Route exact path="/join">
-              <Join />
-            </Route>
-          </Switch>
-          <Footer />
-        </Router>
+        <div className="container-fluid">
+          <Router>
+            <Header />
+            <Modal beer={this.state.selectedBeer} type={'exampleModal'} />
+            <Jumbotron />
+            <Switch>
+              <Route exact path="/">
+                <Content
+                  beerList={this.state.beerList}
+                  title="Beer"
+                  onBeerClick={this.onBeerClick}
+                />
+              </Route>
+              <Route exact path="/home">
+                <Content
+                  beerList={this.state.beerList}
+                  title="Beer"
+                  onBeerClick={this.onBeerClick}
+                />
+              </Route>
+              <Route exact path="/favorites">
+                <Content
+                  beerList={this.state.favBeerList}
+                  title="My Favourite beers"
+                  onBeerClick={this.onBeerClick}
+                />
+              </Route>
+              <Route exact path="/join">
+                <Join />
+              </Route>
+            </Switch>
+            <Footer />
+          </Router>
+        </div>
       </>
     );
   }

@@ -1,0 +1,9 @@
+body {
+  background-color: black;
+  background-image: url('./assets/pattern.svg');
+}
+
+/* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; */
