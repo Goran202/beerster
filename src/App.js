@@ -60,6 +60,13 @@ class App extends Component {
                   onBeerClick={this.onBeerClick}
                 />
               </Route>
+              <Route exact path="/beerster">
+                <Content
+                  beerList={this.state.beerList}
+                  title="Beer"
+                  onBeerClick={this.onBeerClick}
+                />
+              </Route>
               <Route path="/home">
                 <Content
                   beerList={this.state.beerList}
