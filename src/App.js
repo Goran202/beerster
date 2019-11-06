@@ -60,21 +60,21 @@ class App extends Component {
                   onBeerClick={this.onBeerClick}
                 />
               </Route>
-              <Route exact path="/home">
+              <Route path="/home">
                 <Content
                   beerList={this.state.beerList}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                 />
               </Route>
-              <Route exact path="/favorites">
+              <Route path="/favorites">
                 <Content
                   beerList={this.state.favBeerList}
                   title="My Favourite beers"
                   onBeerClick={this.onBeerClick}
                 />
               </Route>
-              <Route exact path="/join">
+              <Route path="/join">
                 <Join />
               </Route>
             </Switch>

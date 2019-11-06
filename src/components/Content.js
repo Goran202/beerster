@@ -11,12 +11,12 @@ const Content = (props) => {
     <div
       className="container"
       style={{
-        backgroundColor: 'yellow',
+        backgroundColor: 'white',
         // backgroundImage: `url(${pattern_background})`,
         // backgroundImage: `url('./pattern_background.png')`,
         // backgroundImage: `url('./pattern_background.svg')`,
         // backgroundPattern: `url('./pattern_background.svg')`,
-        //backgroundImage: `url(${beer1})`,
+        backgroundImage: `url(${pattern_background})`,
       }}
     >
       <div className="row">
