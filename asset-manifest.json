@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/beerster/static/css/main.2969940b.chunk.css",
+    "main.js": "/beerster/static/js/main.d81f4d21.chunk.js",
+    "main.js.map": "/beerster/static/js/main.d81f4d21.chunk.js.map",
+    "runtime-main.js": "/beerster/static/js/runtime-main.77e053f4.js",
+    "runtime-main.js.map": "/beerster/static/js/runtime-main.77e053f4.js.map",
+    "static/js/2.33e8d452.chunk.js": "/beerster/static/js/2.33e8d452.chunk.js",
+    "static/js/2.33e8d452.chunk.js.map": "/beerster/static/js/2.33e8d452.chunk.js.map",
+    "index.html": "/beerster/index.html",
+    "precache-manifest.47637e9da4a3afe2d24b8e223c4cb5b7.js": "/beerster/precache-manifest.47637e9da4a3afe2d24b8e223c4cb5b7.js",
+    "service-worker.js": "/beerster/service-worker.js",
+    "static/css/main.2969940b.chunk.css.map": "/beerster/static/css/main.2969940b.chunk.css.map",
+    "static/media/illustration.png": "/beerster/static/media/illustration.98a99438.png",
+    "static/media/style.css": "/beerster/static/media/pattern.1559ddaa.svg",
+    "static/media/pattern.png": "/beerster/static/media/pattern.a217475e.png",
+    "static/media/pattern_background.svg": "/beerster/static/media/pattern_background.bcd854ba.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.77e053f4.js",
+    "static/js/2.33e8d452.chunk.js",
+    "static/css/main.2969940b.chunk.css",
+    "static/js/main.d81f4d21.chunk.js"
+  ]
+}
