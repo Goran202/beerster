@@ -12,10 +12,6 @@ const Content = (props) => {
       className="container"
       style={{
         backgroundColor: 'white',
-        // backgroundImage: `url(${pattern_background})`,
-        // backgroundImage: `url('./pattern_background.png')`,
-        // backgroundImage: `url('./pattern_background.svg')`,
-        // backgroundPattern: `url('./pattern_background.svg')`,
         backgroundImage: `url(${pattern_background})`,
       }}
     >

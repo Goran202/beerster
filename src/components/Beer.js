@@ -5,34 +5,33 @@ const Beer = (props) => {
 
   return (
     <>
-      <button
-        type="button"
-        // className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
-        onClick={() => props.onBeerClick(props.beer.id)}
-      >
-        <div class="card mb-3">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src={props.beer.image_url} class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural lead-in to
-                  additional content. This content is a little bit longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
+      <div className="embed-responsive embed-responsive-1by1 text-center">
+        <div className="embed-responsive-item">
+          <button
+            // style={{ paddingBottom: '100%' }}
+            type="button"
+            // className="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            onClick={() => props.onBeerClick(props.beer.id)}
+          >
+            <div class="card mb-5">
+              <label>heart checkbox</label>
+              <input type="checkbox"></input>
+              <div class="row no-gutters">
+                <div class="col-md-2">
+                  <img src={props.beer.image_url} class="card-img" alt="..." />
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 className="card-title">{props.beer.name}</h5>
+                    <p className="card-text">IBU: {props.beer.ibu}%</p>
+                    <p className="card-text">ABV: {props.beer.abv}%</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* <div className="card" style={{}}>
+            {/* <div className="card" style={{}}>
           <input type="checkbox"></input>
           <img
             style={{}}
@@ -47,7 +46,9 @@ const Beer = (props) => {
             <p className="card-text">ABV: {props.beer.abv}%</p>
           </div>
         </div> */}
-      </button>
+          </button>
+        </div>
+      </div>
     </>
   );
 };
