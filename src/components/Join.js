@@ -9,6 +9,7 @@ const Join = () => {
       <div
         className="container"
         style={{
+          backgroundColor: 'white',
           backgroundImage: `url(${pattern_background})`,
         }}
       >

@@ -7,6 +7,15 @@ const Beer = (props) => {
     <>
       <div className="embed-responsive embed-responsive-1by1 text-center">
         <div className="embed-responsive-item">
+          <label>tets checkbox</label>
+          <input
+            type="checkbox"
+            name="name"
+            value={props.beer.isChecked}
+            checked={props.beer.isChecked}
+            onChange={() => props.onCheckBoxChange(props.beer)}
+          />
+
           <button
             // style={{ paddingBottom: '100%' }}
             type="button"

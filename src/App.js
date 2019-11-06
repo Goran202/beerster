@@ -13,10 +13,22 @@ class App extends Component {
   state = {
     beerList: [],
     favBeerList: [],
-    selectedBeer: { name: 'beername', id: 66 },
+    selectedBeer: {
+      name: 'beername',
+      id: 66,
+      ingredients: { hops: [], malt: [], yeast: '' },
+    },
   };
 
   componentDidMount() {
+    const local = localStorage.getItem('favBeerListLocal');
+    if (local) {
+      const localJSON = JSON.parse(local);
+      this.setState({
+        favBeerList: localJSON,
+      });
+    }
+
     punkApi
       .get('beers')
       .then((response) => {
@@ -26,20 +38,23 @@ class App extends Component {
       .catch((error) => {
         console.log(error);
       });
-
-    // const local = localStorage.getItem('favBeerListLocal');
-    // if (local) {
-    //   const localJSON = JSON.parse(local);
-    //   this.setState({
-    //     myList: localJSON,
-    //   });
-    // }
   }
 
   onBeerClick = (id_arg) => {
     let tempState = { ...this.state };
     let tempBeer = tempState.beerList.find((beer) => beer.id === id_arg);
     this.setState({ selectedBeer: tempBeer });
+  };
+
+  onCheckBoxChange = (beer_arg) => {
+    beer_arg.isChecked = !beer_arg.isChecked;
+    let helperState = { ...this.state };
+    helperState.beerList.find(
+      (beer) => beer.id === beer_arg.id
+    ).isChecked = !helperState.beerList.find((beer) => beer.id === beer_arg.id).isChecked;
+    this.setState(helperState);
+    console.log(helperState);
+    console.log(this.state);
   };
 
   render() {
@@ -58,13 +73,15 @@ class App extends Component {
                   beerList={this.state.beerList}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
+                  onCheckBoxChange={this.onCheckBoxChange}
                 />
               </Route>
-              <Route exact path="/beerster">
+              <Route path="/beerster">
                 <Content
                   beerList={this.state.beerList}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
+                  onCheckBoxChange={this.onCheckBoxChange}
                 />
               </Route>
               <Route path="/home">
@@ -72,6 +89,7 @@ class App extends Component {
                   beerList={this.state.beerList}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
+                  onCheckBoxChange={this.onCheckBoxChange}
                 />
               </Route>
               <Route path="/favorites">
@@ -79,6 +97,7 @@ class App extends Component {
                   beerList={this.state.favBeerList}
                   title="My Favourite beers"
                   onBeerClick={this.onBeerClick}
+                  onCheckBoxChange={this.onCheckBoxChange}
                 />
               </Route>
               <Route path="/join">

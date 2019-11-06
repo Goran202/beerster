@@ -18,7 +18,11 @@ const Content = (props) => {
       <div className="row">
         <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-8">
           <h2>{props.title}</h2>
-          <Beers beerList={props.beerList} onBeerClick={props.onBeerClick} />
+          <Beers
+            beerList={props.beerList}
+            onBeerClick={props.onBeerClick}
+            onCheckBoxChange={props.onCheckBoxChange}
+          />
         </div>
         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
           <h2>CRATE</h2>

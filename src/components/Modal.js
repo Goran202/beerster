@@ -52,6 +52,17 @@ const Modal = (props) => {
                     <h4 className="card-title">{props.beer.name}</h4>
                     <p className="card-text">IBU: {props.beer.ibu}%</p>
                     <p className="card-text">ABV: {props.beer.abv}%</p>
+
+                    <p className="card-text">
+                      INGREDIENTS: <br />
+                      HOPS: {props.beer.ingredients.hops.map((item) => item.name + ', ')}
+                      <br />
+                      MALT: {props.beer.ingredients.malt.map((item) => item.name + ', ')}
+                      <br />
+                      YEAST:{props.beer.ingredients.yeast}
+                      {/* {props.beer.ingredients.yeast.map((item) => item.name + ', ')} */}
+                      <br />
+                    </p>
                     <p className="card-text">{props.beer.description}</p>
 
                     <button type="button" className="btn btn-secondary">
