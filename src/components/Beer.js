@@ -1,13 +1,13 @@
-import React from 'react';
-import HeartImage from './HeartImage';
+import React from "react";
+import HeartImage from "./HeartImage";
 
-const Beer = (props) => {
+const Beer = props => {
   // console.log(props.beer.image_url);
 
   return (
     <>
-      <div className="embed-responsive embed-responsive-1by1 text-center">
-        <div className="embed-responsive-item">
+      <div className='embed-responsive embed-responsive-1by1 text-center'>
+        <div className='embed-responsive-item'>
           {/* <label>test checkbox</label>
           <input
             type="checkbox"
@@ -16,30 +16,33 @@ const Beer = (props) => {
             checked={props.beer.isChecked}
             onChange={() => props.onCheckBoxChange(props.beer)}
           /> */}
-          <button type="button" onClick={() => props.onCheckBoxChange(props.beer)}>
+          <button
+            type='button'
+            onClick={() => props.onCheckBoxChange(props.beer)}
+          >
             <HeartImage isChecked={props.beer.isChecked} />
           </button>
 
           <button
             // style={{ paddingBottom: '100%' }}
-            type="button"
+            type='button'
             // className="btn btn-primary"
-            data-toggle="modal"
-            data-target="#exampleModal"
+            data-toggle='modal'
+            data-target='#exampleModal'
             onClick={() => props.onBeerClick(props.beer.id)}
           >
-            <div class="card mb-5">
+            <div class='card mb-5'>
               {/* <label>heart checkbox</label>
               <input type="checkbox"></input> */}
-              <div class="row no-gutters">
-                <div class="col-md-2">
-                  <img src={props.beer.image_url} class="card-img" alt="..." />
+              <div class='row no-gutters'>
+                <div class='col-2'>
+                  <img src={props.beer.image_url} class='card-img' alt='...' />
                 </div>
-                <div class="col-md-10">
-                  <div class="card-body">
-                    <h5 className="card-title">{props.beer.name}</h5>
-                    <p className="card-text">IBU: {props.beer.ibu}%</p>
-                    <p className="card-text">ABV: {props.beer.abv}%</p>
+                <div class='col-10'>
+                  <div class='card-body'>
+                    <h5 className='card-title'>{props.beer.name}</h5>
+                    <p className='card-text'>IBU: {props.beer.ibu}%</p>
+                    <p className='card-text'>ABV: {props.beer.abv}%</p>
                   </div>
                 </div>
               </div>
