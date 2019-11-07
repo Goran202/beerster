@@ -1,4 +1,5 @@
 import React from 'react';
+import HeartImage from './HeartImage';
 
 const Beer = (props) => {
   // console.log(props.beer.image_url);
@@ -7,14 +8,17 @@ const Beer = (props) => {
     <>
       <div className="embed-responsive embed-responsive-1by1 text-center">
         <div className="embed-responsive-item">
-          <label>tets checkbox</label>
+          {/* <label>test checkbox</label>
           <input
             type="checkbox"
             name="name"
             value={props.beer.isChecked}
             checked={props.beer.isChecked}
             onChange={() => props.onCheckBoxChange(props.beer)}
-          />
+          /> */}
+          <button type="button" onClick={() => props.onCheckBoxChange(props.beer)}>
+            <HeartImage isChecked={props.beer.isChecked} />
+          </button>
 
           <button
             // style={{ paddingBottom: '100%' }}
@@ -25,8 +29,8 @@ const Beer = (props) => {
             onClick={() => props.onBeerClick(props.beer.id)}
           >
             <div class="card mb-5">
-              <label>heart checkbox</label>
-              <input type="checkbox"></input>
+              {/* <label>heart checkbox</label>
+              <input type="checkbox"></input> */}
               <div class="row no-gutters">
                 <div class="col-md-2">
                   <img src={props.beer.image_url} class="card-img" alt="..." />

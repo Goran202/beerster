@@ -12,7 +12,7 @@ import './style.css';
 class App extends Component {
   state = {
     beerList: [],
-    favBeerList: [],
+    favBeerIdList: [],
     selectedBeer: {
       name: 'beername',
       id: 66,
@@ -21,24 +21,56 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const local = localStorage.getItem('favBeerListLocal');
+    const local = localStorage.getItem('favBeerIdListLocal');
+    console.log('lokal');
+    console.log(local);
+
+    let localJSON;
     if (local) {
-      const localJSON = JSON.parse(local);
-      this.setState({
-        favBeerList: localJSON,
-      });
+      localJSON = JSON.parse(local);
+    } else {
+      localJSON = [];
     }
+    localStorage.setItem('favBeerIdListLocal', JSON.stringify(localJSON));
+
+    // this.setState({
+    //   favBeerIdList: localJSON,
+    // });
 
     punkApi
       .get('beers')
       .then((response) => {
-        //console.log(response);
         this.setState({ beerList: response.data, selectedBeer: response.data[0] });
       })
       .catch((error) => {
         console.log(error);
       });
   }
+
+  addIsCheckedProperty(arrayOfObjects, arrayOfIds) {
+    arrayOfObjects.map((object) => {
+      object.isChecked = arrayOfIds.includes(object.id)
+        ? (object.isChecked = true)
+        : false;
+      return object;
+    });
+  }
+
+  updateLocalStorage = (id_arg) => {
+    console.log('id_arg');
+    console.log(id_arg);
+
+    const local = localStorage.getItem('favBeerIdListLocal');
+    let localJSON = JSON.parse(local);
+    if (!localJSON.includes(id_arg)) {
+      localJSON.push(id_arg);
+      console.log('added');
+    } else {
+      console.log('removed');
+      localJSON = localJSON.filter((id) => id !== id_arg);
+    }
+    localStorage.setItem('favBeerIdListLocal', JSON.stringify(localJSON));
+  };
 
   onBeerClick = (id_arg) => {
     let tempState = { ...this.state };
@@ -47,14 +79,13 @@ class App extends Component {
   };
 
   onCheckBoxChange = (beer_arg) => {
-    beer_arg.isChecked = !beer_arg.isChecked;
+    // beer_arg.isChecked = !beer_arg.isChecked;
     let helperState = { ...this.state };
     helperState.beerList.find(
       (beer) => beer.id === beer_arg.id
     ).isChecked = !helperState.beerList.find((beer) => beer.id === beer_arg.id).isChecked;
     this.setState(helperState);
-    console.log(helperState);
-    console.log(this.state);
+    this.updateLocalStorage(beer_arg.id);
   };
 
   render() {
@@ -94,7 +125,7 @@ class App extends Component {
               </Route>
               <Route path="/favorites">
                 <Content
-                  beerList={this.state.favBeerList}
+                  beerList={this.state.beerList.filter((beer) => beer.isChecked === true)}
                   title="My Favourite beers"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
