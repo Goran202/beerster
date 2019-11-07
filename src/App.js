@@ -96,6 +96,8 @@ class App extends Component {
   //   this.setState({ state: helper });
   // };
   onModalButtonClick = (beer_arg) => {
+    console.log('Added to crate');
+
     let ids = this.state.beersInCrateIds;
     ids.push(beer_arg.id);
     this.setState({ beersInCrateIds: ids });
