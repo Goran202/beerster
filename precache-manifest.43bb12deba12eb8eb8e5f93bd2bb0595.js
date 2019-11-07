@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d6d2b4e703cfc0af1252bf85b0bf0179",
+    "revision": "3112f20d0ca283ef705cd558cbd6f452",
     "url": "/beerster/index.html"
   },
   {
-    "revision": "bc9e2de38b7966398a64",
-    "url": "/beerster/static/css/main.2969940b.chunk.css"
+    "revision": "ded7003b45e4ab5e1336",
+    "url": "/beerster/static/css/main.64e1c4d5.chunk.css"
   },
   {
     "revision": "80391d4eff8c29b0ba5c",
     "url": "/beerster/static/js/2.3a886fb7.chunk.js"
   },
   {
-    "revision": "bc9e2de38b7966398a64",
-    "url": "/beerster/static/js/main.537da675.chunk.js"
+    "revision": "ded7003b45e4ab5e1336",
+    "url": "/beerster/static/js/main.38345d5c.chunk.js"
   },
   {
     "revision": "c07621cbb249eacc91fa",
@@ -24,15 +24,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beerster/static/media/illustration.98a99438.png"
   },
   {
-    "revision": "1559ddaa64a06ae0e55a1a2efa4b8e2c",
-    "url": "/beerster/static/media/pattern.1559ddaa.svg"
+    "revision": "73de5cd937f580d31fe8b478e972080a",
+    "url": "/beerster/static/media/pattern.73de5cd9.svg"
   },
   {
     "revision": "a217475e9b27c84b08d01d08c98f532a",
     "url": "/beerster/static/media/pattern.a217475e.png"
   },
   {
-    "revision": "bcd854baacb8e502e06e011fb41fb4a9",
-    "url": "/beerster/static/media/pattern_background.bcd854ba.svg"
+    "revision": "b6e94b71c36a2c6aa34d471b323c6d40",
+    "url": "/beerster/static/media/pattern_background.b6e94b71.svg"
   }
 ]);
