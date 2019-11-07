@@ -12,6 +12,7 @@ import './style.css';
 class App extends Component {
   state = {
     beerList: [],
+    beersInCrateIds: [],
     favBeerIdList: [],
     selectedBeer: {
       name: 'beername',
@@ -22,8 +23,6 @@ class App extends Component {
 
   componentDidMount() {
     const local = localStorage.getItem('favBeerIdListLocal');
-    console.log('lokal');
-    console.log(local);
 
     let localJSON;
     if (local) {
@@ -33,13 +32,13 @@ class App extends Component {
     }
     localStorage.setItem('favBeerIdListLocal', JSON.stringify(localJSON));
 
-    // this.setState({
-    //   favBeerIdList: localJSON,
-    // });
-
     punkApi
       .get('beers')
       .then((response) => {
+        this.addIsCheckedProperty(
+          response.data,
+          JSON.parse(localStorage.getItem('favBeerIdListLocal'))
+        );
         this.setState({ beerList: response.data, selectedBeer: response.data[0] });
       })
       .catch((error) => {
@@ -48,6 +47,9 @@ class App extends Component {
   }
 
   addIsCheckedProperty(arrayOfObjects, arrayOfIds) {
+    console.log('addIs');
+    console.log(arrayOfObjects);
+
     arrayOfObjects.map((object) => {
       object.isChecked = arrayOfIds.includes(object.id)
         ? (object.isChecked = true)
@@ -88,6 +90,17 @@ class App extends Component {
     this.updateLocalStorage(beer_arg.id);
   };
 
+  // onModalButtonClick = (beer_arg) => {
+  //   const helper = { ...this.state };
+  //   helper.beerList.find((beer) => beer === beer_arg).isInCrate = true;
+  //   this.setState({ state: helper });
+  // };
+  onModalButtonClick = (beer_arg) => {
+    let ids = this.state.beersInCrateIds;
+    ids.push(beer_arg.id);
+    this.setState({ beersInCrateIds: ids });
+  };
+
   render() {
     // this.setState({ selectedBeer: this.state.beerList[0] });
 
@@ -96,7 +109,12 @@ class App extends Component {
         <div className="container-fluid">
           <Router>
             <Header />
-            <Modal beer={this.state.selectedBeer} type={'exampleModal'} />
+            <Modal
+              beer={this.state.selectedBeer}
+              type={'exampleModal'}
+              onCheckBoxChange={this.onCheckBoxChange}
+              onModalButtonClick={this.onModalButtonClick}
+            />
             <Jumbotron />
             <Switch>
               <Route exact path="/">
@@ -105,6 +123,7 @@ class App extends Component {
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
+                  beersInCrateIds={this.state.beersInCrateIds}
                 />
               </Route>
               <Route path="/beerster">
@@ -113,6 +132,7 @@ class App extends Component {
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
+                  beersInCrateIds={this.state.beersInCrateIds}
                 />
               </Route>
               <Route path="/home">
@@ -121,6 +141,7 @@ class App extends Component {
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
+                  beersInCrateIds={this.state.beersInCrateIds}
                 />
               </Route>
               <Route path="/favorites">
@@ -129,6 +150,7 @@ class App extends Component {
                   title="My Favourite beers"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
+                  numBeersInCrate={this.state.beersInCrateIds}
                 />
               </Route>
               <Route path="/join">

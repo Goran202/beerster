@@ -1,4 +1,5 @@
 import React from 'react';
+import HeartImage from './HeartImage';
 
 const Modal = (props) => {
   console.log(props);
@@ -38,6 +39,10 @@ const Modal = (props) => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
+        <button type="button" onClick={() => props.onCheckBoxChange(props.beer)}>
+          <HeartImage isChecked={props.beer.isChecked} />
+        </button>
+
         <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="card" style={{}}>
@@ -65,8 +70,12 @@ const Modal = (props) => {
                     </p>
                     <p className="card-text">{props.beer.description}</p>
 
-                    <button type="button" className="btn btn-secondary">
-                      ADD TO CART
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      onClick={() => props.onModalButtonClick(props.beer)}
+                    >
+                      ADD TO CRATE
                     </button>
                   </div>
                 </div>

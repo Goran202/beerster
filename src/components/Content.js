@@ -26,7 +26,7 @@ const Content = (props) => {
         </div>
         <div className="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
           <h2>CRATE</h2>
-          <Crate />
+          <Crate beerList={props.beerList} beersInCrateIds={props.beersInCrateIds} />
         </div>
       </div>
     </div>
