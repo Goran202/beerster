@@ -42,15 +42,23 @@ const Beers = (props) => {
       data-touch="true"
     >
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src={bottle_draft} alt="First slide" />
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src={bottle_draft} alt="Second slide" />
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src={bottle_final} alt="Third slide" />
-        </div>
+        {props.beerList.map((beer, i) => {
+          return (
+            // <div class="carousel-item">
+            <div class={`carousel-item${i === 0 ? ' active' : ''}`}>
+              <div
+                key={uuid.v4()}
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+              >
+                <Beer
+                  beer={beer}
+                  onBeerClick={props.onBeerClick}
+                  onCheckBoxChange={props.onCheckBoxChange}
+                />
+              </div>
+            </div>
+          );
+        })}
       </div>
       <a
         class="carousel-control-prev"
@@ -75,7 +83,7 @@ const Beers = (props) => {
 
   return (
     <>
-      <div>{renderCardsCarousel()}</div>
+      <div className="d-block d-sm-block d-md-none">{renderCardsCarousel()}</div>
       <div className="container-fluid d-none d-md-block">
         <div className="row ">{renderCards()}</div>
       </div>
