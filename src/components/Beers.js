@@ -21,7 +21,7 @@ const Beers = (props) => {
   const renderCards = () => {
     return props.beerList.map((beer, i) => {
       return (
-        <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+        <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
           <Beer
             beer={beer}
             onBeerClick={props.onBeerClick}
@@ -32,10 +32,59 @@ const Beers = (props) => {
     });
   };
 
-  return (
-    <div className="container-fluid">
-      <div className="row">{renderCards()}</div>
+  const renderCardsCarousel = () => (
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            class="d-block w-100"
+            src=".../800x400?auto=yes&bg=777&fg=555&text=First slide"
+            alt="First slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide"
+            alt="Second slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide"
+            alt="Third slide"
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+  );
+
+  return (
+    <>
+      <div>{renderCardsCarousel()}</div>
+      <div className="container-fluid d-none d-md-block">
+        <div className="row ">{renderCards()}</div>
+      </div>
+    </>
   );
 };
 
