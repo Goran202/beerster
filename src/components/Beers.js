@@ -1,6 +1,7 @@
 import React from 'react';
 import Beer from './Beer';
 import uuid from 'uuid';
+import bottle_final from '../assets/bottle_final.png';
 
 const Beers = (props) => {
   switch (props.sortBy) {
@@ -36,25 +37,13 @@ const Beers = (props) => {
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            class="d-block w-100"
-            src=".../800x400?auto=yes&bg=777&fg=555&text=First slide"
-            alt="First slide"
-          />
+          <img class="d-block w-100" src={bottle_final} alt="First slide" />
         </div>
         <div class="carousel-item">
-          <img
-            class="d-block w-100"
-            src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide"
-            alt="Second slide"
-          />
+          <img class="d-block w-100" src={bottle_final} alt="Second slide" />
         </div>
         <div class="carousel-item">
-          <img
-            class="d-block w-100"
-            src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide"
-            alt="Third slide"
-          />
+          <img class="d-block w-100" src={bottle_final} alt="Third slide" />
         </div>
       </div>
       <a
@@ -71,6 +60,7 @@ const Beers = (props) => {
         href="#carouselExampleControls"
         role="button"
         data-slide="next"
+        data-touch="true"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
