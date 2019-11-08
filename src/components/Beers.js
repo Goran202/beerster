@@ -2,6 +2,7 @@ import React from 'react';
 import Beer from './Beer';
 import uuid from 'uuid';
 import bottle_final from '../assets/bottle_final.png';
+import bottle_draft from '../assets/bottle_draft.png';
 
 const Beers = (props) => {
   switch (props.sortBy) {
@@ -42,10 +43,10 @@ const Beers = (props) => {
     >
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src={bottle_final} alt="First slide" />
+          <img class="d-block w-100" src={bottle_draft} alt="First slide" />
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src={bottle_final} alt="Second slide" />
+          <img class="d-block w-100" src={bottle_draft} alt="Second slide" />
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src={bottle_final} alt="Third slide" />
