@@ -15,6 +15,7 @@ const initializeLocalStorage = () => {
 class App extends Component {
   state = {
     beerList: [],
+    sortBy: 'name',
     beersInCrateIds: [],
     favBeerIdList: [],
     selectedBeer: {
@@ -87,6 +88,10 @@ class App extends Component {
     this.setState({ beersInCrateIds: ids });
   };
 
+  onSelectMenuChange = (e) => {
+    this.setState({ sortBy: e.target.value });
+  };
+
   render() {
     return (
       <>
@@ -104,6 +109,8 @@ class App extends Component {
               <Route exact path="/">
                 <Content
                   beerList={this.state.beerList}
+                  sortBy={this.state.sortBy}
+                  onSelectMenuChange={this.onSelectMenuChange}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
@@ -113,6 +120,8 @@ class App extends Component {
               <Route path="/beerster">
                 <Content
                   beerList={this.state.beerList}
+                  sortBy={this.state.sortBy}
+                  onSelectMenuChange={this.onSelectMenuChange}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
@@ -122,6 +131,8 @@ class App extends Component {
               <Route path="/home">
                 <Content
                   beerList={this.state.beerList}
+                  sortBy={this.state.sortBy}
+                  onSelectMenuChange={this.onSelectMenuChange}
                   title="Beer"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}
@@ -131,6 +142,8 @@ class App extends Component {
               <Route path="/favorites">
                 <Content
                   beerList={this.state.beerList.filter((beer) => beer.isChecked === true)}
+                  sortBy={this.state.sortBy}
+                  onSelectMenuChange={this.onSelectMenuChange}
                   title="My Favourite beers"
                   onBeerClick={this.onBeerClick}
                   onCheckBoxChange={this.onCheckBoxChange}

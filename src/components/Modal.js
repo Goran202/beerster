@@ -12,7 +12,7 @@ const Modal = (props) => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div className="modal-dialog modal-sm modal-dialog-centered" role="document">
           <div className="modal-content">
             {' '}
             <a

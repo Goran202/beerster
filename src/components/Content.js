@@ -15,9 +15,10 @@ const Content = (props) => (
     <div className="row">
       <div className="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xl-8">
         <h2>{props.title}</h2>
-        <Sort />
+        <Sort onSelectMenuChange={props.onSelectMenuChange} />
         <Beers
           beerList={props.beerList}
+          sortBy={props.sortBy}
           onBeerClick={props.onBeerClick}
           onCheckBoxChange={props.onCheckBoxChange}
         />

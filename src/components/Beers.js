@@ -3,6 +3,21 @@ import Beer from './Beer';
 import uuid from 'uuid';
 
 const Beers = (props) => {
+  switch (props.sortBy) {
+    case 'name':
+      props.beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
+      break;
+    case 'ibu':
+      console.log('IBU');
+      props.beerList.sort((a, b) => a.ibu - b.ibu);
+      break;
+    case 'abv':
+      props.beerList.sort((a, b) => a.abv - b.abv);
+      break;
+    default:
+      props.beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
+  }
+
   const renderCards = () => {
     return props.beerList.map((beer, i) => {
       return (

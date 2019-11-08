@@ -1,12 +1,14 @@
 import React from 'react';
 
-const Sort = () => (
+const Sort = (props) => (
   <div>
     Sort by:
-    <select class="custom-select">
-      <option selected>Name</option>
-      <option value="1">IBU</option>
-      <option value="2">ABV</option>
+    <select class="custom-select" onChange={props.onSelectMenuChange}>
+      <option value="name" selected>
+        Name
+      </option>
+      <option value="ibu">IBU</option>
+      <option value="abv">ABV</option>
     </select>
   </div>
 );

@@ -14,10 +14,18 @@ const Crate = (props) => (
       THREE
     </a>
     {/* <div> */}
-    <div style={{ position: 'absolute' }}>
-      <BeersInCrate beerList={props.beerList} beersInCrateIds={props.beersInCrateIds} />
+    <div style={{ display: 'inline-block', position: 'relative' }}>
+      <img src={crate} alt="crate" style={{ maxWidth: '100%' }}></img>
+      <div
+        style={{
+          position: 'absolute',
+          top: '0%',
+          padding: '10px',
+        }}
+      >
+        <BeersInCrate beerList={props.beerList} beersInCrateIds={props.beersInCrateIds} />
+      </div>
     </div>
-    <img src={crate} alt="crate"></img>
     {/* </div> */}
     <blockquote className="blockquote text-center">
       <p>Add a beer to have it appear in the crate.</p>
