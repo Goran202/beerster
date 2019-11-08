@@ -26,17 +26,17 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <Link className="nav-link" to="/home">
+                <Link className="nav-link" to="/beerster/home">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/favorites">
+                <Link className="nav-link" to="/beerster/favorites">
                   Favorites
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/join">
+                <Link className="nav-link" to="/beerster/join">
                   Join
                 </Link>
               </li>
