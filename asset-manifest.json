@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/beerster/static/css/main.2969940b.chunk.css",
-    "main.js": "/beerster/static/js/main.6ba1fde1.chunk.js",
-    "main.js.map": "/beerster/static/js/main.6ba1fde1.chunk.js.map",
+    "main.js": "/beerster/static/js/main.548b6dab.chunk.js",
+    "main.js.map": "/beerster/static/js/main.548b6dab.chunk.js.map",
     "runtime-main.js": "/beerster/static/js/runtime-main.77e053f4.js",
     "runtime-main.js.map": "/beerster/static/js/runtime-main.77e053f4.js.map",
     "static/js/2.5b98267f.chunk.js": "/beerster/static/js/2.5b98267f.chunk.js",
     "static/js/2.5b98267f.chunk.js.map": "/beerster/static/js/2.5b98267f.chunk.js.map",
     "index.html": "/beerster/index.html",
-    "precache-manifest.a87bc2d1eb1fb23b9c42ef0373579265.js": "/beerster/precache-manifest.a87bc2d1eb1fb23b9c42ef0373579265.js",
+    "precache-manifest.af22e48dcf7176262d69aabc10be5f59.js": "/beerster/precache-manifest.af22e48dcf7176262d69aabc10be5f59.js",
     "service-worker.js": "/beerster/service-worker.js",
     "static/css/main.2969940b.chunk.css.map": "/beerster/static/css/main.2969940b.chunk.css.map",
     "static/media/illustration.png": "/beerster/static/media/illustration.98a99438.png",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.77e053f4.js",
     "static/js/2.5b98267f.chunk.js",
     "static/css/main.2969940b.chunk.css",
-    "static/js/main.6ba1fde1.chunk.js"
+    "static/js/main.548b6dab.chunk.js"
   ]
 }
