@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Jumbotron from './components/Jumbotron';
-import Content from './components/Content';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Modal from './components/Modal';
-import Join from './components/Join';
+
+import { Header, Footer, Jumbotron, Content, Modal, Join } from './components';
 import punkApi from './apis/punkApi';
+
 import './style.css';
+
+const initializeLocalStorage = () => {
+  if (!localStorage.getItem('favBeerIdListLocal')) {
+    localStorage.setItem('favBeerIdListLocal', JSON.stringify([]));
+  }
+};
 
 class App extends Component {
   state = {
@@ -15,23 +18,13 @@ class App extends Component {
     beersInCrateIds: [],
     favBeerIdList: [],
     selectedBeer: {
-      name: 'beername',
-      id: 66,
+      name: '',
+      id: '',
       ingredients: { hops: [], malt: [], yeast: '' },
     },
   };
 
-  componentDidMount() {
-    const local = localStorage.getItem('favBeerIdListLocal');
-
-    let localJSON;
-    if (local) {
-      localJSON = JSON.parse(local);
-    } else {
-      localJSON = [];
-    }
-    localStorage.setItem('favBeerIdListLocal', JSON.stringify(localJSON));
-
+  fetchDataFromApi = () => {
     punkApi
       .get('beers')
       .then((response) => {
@@ -41,22 +34,26 @@ class App extends Component {
         );
         this.setState({
           beerList: response.data,
-          selectedBeer: response.data[0],
         });
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  componentDidMount() {
+    initializeLocalStorage();
+    this.fetchDataFromApi();
   }
 
-  addIsCheckedProperty(arrayOfObjects, arrayOfIds) {
+  addIsCheckedProperty = (arrayOfObjects, arrayOfIds) => {
     arrayOfObjects.map((object) => {
       object.isChecked = arrayOfIds.includes(object.id)
         ? (object.isChecked = true)
         : false;
       return object;
     });
-  }
+  };
 
   updateLocalStorage = (id_arg) => {
     const local = localStorage.getItem('favBeerIdListLocal');

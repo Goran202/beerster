@@ -1,0 +1,13 @@
+export { default as Beer } from './Beer';
+export { default as BeerInCrateImg } from './BeerInCrateImg';
+export { default as Beers } from './Beers';
+export { default as BeersInCrate } from './BeersInCrate';
+export { default as Content } from './Content';
+export { default as Crate } from './Crate';
+export { default as Footer } from './Footer';
+export { default as Header } from './Header';
+export { default as HeartImage } from './HeartImage';
+export { default as Join } from './Join';
+export { default as Jumbotron } from './Jumbotron';
+export { default as Modal } from './Modal';
+export { default as SocialMedia } from './SocialMedia';

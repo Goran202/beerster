@@ -2,8 +2,6 @@ import React from 'react';
 import HeartImage from './HeartImage';
 
 const Modal = (props) => {
-  console.log(props);
-
   return (
     <>
       <div
@@ -17,24 +15,23 @@ const Modal = (props) => {
         <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div className="modal-content">
             {' '}
-            <button
+            <a
               style={{ position: 'absolute', zIndex: '3' }}
-              type="button"
+              // type="button"
               onClick={() => props.onCheckBoxChange(props.beer)}
             >
               <HeartImage isChecked={props.beer.isChecked} />
-            </button>
+            </a>
             <div className="card" style={{}}>
-              <div class="row no-gutters">
-                <div class="col-md-2" style={{ paddingTop: '40px' }}>
+              <div className="row no-gutters">
+                <div className="col-md-2" style={{ paddingTop: '40px' }}>
                   <img className="card-img-top" src={props.beer.image_url} alt="Card" />
                 </div>
-                <div class="col-md-10">
+                <div className="col-md-10">
                   <div className="card-body">
                     <h4 className="card-title">{props.beer.name}</h4>
                     <p className="card-text">IBU: {props.beer.ibu}%</p>
                     <p className="card-text">ABV: {props.beer.abv}%</p>
-
                     <p className="card-text">
                       INGREDIENTS: <br />
                       HOPS: {props.beer.ingredients.hops.map((item) => item.name + ', ')}

@@ -49,17 +49,17 @@ const Join = () => {
               <label htmlFor="rsvp">RSVP</label>
               <br />
               <label>
-                <input type="radio" value="option1" checked={true} />
+                <input type="radio" value="option1" />
                 I.m coming!
               </label>
               <br />
               <label>
-                <input type="radio" value="option1" checked={false} />
+                <input type="radio" value="option1" />
                 Maybe
               </label>
               <br />
               <label>
-                <input type="radio" value="option1" checked={false} />
+                <input type="radio" value="option1" />
                 Can't make it
               </label>
               <br />
