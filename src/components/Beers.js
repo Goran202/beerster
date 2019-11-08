@@ -34,7 +34,12 @@ const Beers = (props) => {
   };
 
   const renderCardsCarousel = () => (
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+      data-touch="true"
+    >
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img class="d-block w-100" src={bottle_final} alt="First slide" />
@@ -60,7 +65,6 @@ const Beers = (props) => {
         href="#carouselExampleControls"
         role="button"
         data-slide="next"
-        data-touch="true"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
