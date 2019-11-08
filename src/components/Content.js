@@ -2,9 +2,6 @@ import React from 'react';
 import Beers from './Beers';
 import Crate from './Crate';
 import pattern_background from '../assets/pattern_background.png';
-import pattern_background_svg from '../assets/pattern_background.svg';
-import pattern_svg from '../assets/pattern.svg';
-import beer1 from '../assets/beer.png';
 
 const Content = (props) => {
   return (

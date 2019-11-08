@@ -1,6 +1,5 @@
 import React from 'react';
 import crate from '../assets/crate.png';
-import BeerInCrateImg from './BeerInCrateImg';
 import BeersInCrate from './BeersInCrate';
 
 const Crate = (props) => {

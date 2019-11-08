@@ -2,8 +2,6 @@ import React from 'react';
 import Beer from './Beer';
 
 const Beers = (props) => {
-  let a = [1, 2, 3, 4, 5];
-  //   a = [];
   const renderCards = () => {
     return props.beerList.map((beer, i) => {
       return (
@@ -23,13 +21,6 @@ const Beers = (props) => {
       <div className="row">{renderCards()}</div>
     </div>
   );
-
-  /* {a.map((item) => (
-        <div>
-          <Beer />
-          <p>item</p>
-        </div>
-      ))} */
 };
 
 export default Beers;
