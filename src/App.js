@@ -69,7 +69,7 @@ class App extends Component {
   onBeerClick = (id_arg) => {
     let tempState = { ...this.state };
     let tempBeer = tempState.beerList.find((beer) => beer.id === id_arg);
-    //  this.setState({ selectedBeer: tempBeer });
+    this.setState({ selectedBeer: tempBeer });
   };
 
   onCheckBoxChange = (beer_arg) => {
