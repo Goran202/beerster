@@ -6,9 +6,9 @@ import pattern_background from '../assets/pattern_background.png';
 
 const Content = (props) => (
   <div
-    className="container-fluid"
+    className="container"
     style={{
-      // width: '95%',
+      // maxWidth: '85%',
       backgroundColor: 'white',
       backgroundImage: `url(${pattern_background})`,
     }}

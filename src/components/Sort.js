@@ -4,14 +4,14 @@ const Sort = (props) => (
   // <div>
   //   Sort by:
 
-  <div classname="input-group mb-3">
-    <div classname="input-group-prepend">
-      <label classname="input-group-text" for="inputGroupSelect01">
+  <div className="input-group mb-3">
+    <div className="input-group-prepend">
+      <label className="input-group-text" htmlFor="inputGroupSelect01">
         Sort by:
       </label>
     </div>
-    <select classname="custom-select" onChange={props.onSelectMenuChange}>
-      <option value="name" selected>
+    <select className="custom-select" onChange={props.onSelectMenuChange}>
+      <option value="name" defaultValue={'DEFAULT'}>
         Name
       </option>
       <option value="ibu">IBU</option>

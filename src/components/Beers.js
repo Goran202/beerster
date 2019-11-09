@@ -44,11 +44,8 @@ const Beers = (props) => {
       <div className="carousel-inner">
         {props.beerList.map((beer, i) => {
           return (
-            <div className={`carousel-item${i === 0 ? ' active' : ''}`}>
-              <div
-                key={uuid.v4()}
-                className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
-              >
+            <div key={uuid.v4()} className={`carousel-item${i === 0 ? ' active' : ''}`}>
+              <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                 <Beer
                   beer={beer}
                   onBeerClick={props.onBeerClick}

@@ -13,7 +13,7 @@ const Jumbotron = () => {
         }
       }
     >
-      <div className="jumbotrone">
+      <div className="jumbotrone-container">
         <div className="row text-center">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
             <h5

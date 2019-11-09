@@ -114,71 +114,71 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className="container">
-          <Router>
-            <Header
-              navSelected={this.state.navSelected}
-              onNavbarClick={this.onNavbarClick}
-            />
-            <Modal
-              beer={this.state.selectedBeer}
-              type={'exampleModal'}
-              onCheckBoxChange={this.onCheckBoxChange}
-              onModalButtonClick={this.onModalButtonClick}
-            />
-            <Jumbotron />
-            <Switch>
-              <Route exact path="/">
-                <Content
-                  beerList={this.state.beerList}
-                  sortBy={this.state.sortBy}
-                  onSelectMenuChange={this.onSelectMenuChange}
-                  title="Beer"
-                  onBeerClick={this.onBeerClick}
-                  onCheckBoxChange={this.onCheckBoxChange}
-                  beersInCrateIds={this.state.beersInCrateIds}
-                />
-              </Route>
-              <Route path="/beerster">
-                <Content
-                  beerList={this.state.beerList}
-                  sortBy={this.state.sortBy}
-                  onSelectMenuChange={this.onSelectMenuChange}
-                  title="Beer"
-                  onBeerClick={this.onBeerClick}
-                  onCheckBoxChange={this.onCheckBoxChange}
-                  beersInCrateIds={this.state.beersInCrateIds}
-                />
-              </Route>
-              <Route path="/home">
-                <Content
-                  beerList={this.state.beerList}
-                  sortBy={this.state.sortBy}
-                  onSelectMenuChange={this.onSelectMenuChange}
-                  title="Beer"
-                  onBeerClick={this.onBeerClick}
-                  onCheckBoxChange={this.onCheckBoxChange}
-                  beersInCrateIds={this.state.beersInCrateIds}
-                />
-              </Route>
-              <Route path="/favorites">
-                <Content
-                  beerList={this.state.beerList.filter((beer) => beer.isChecked === true)}
-                  sortBy={this.state.sortBy}
-                  onSelectMenuChange={this.onSelectMenuChange}
-                  title="My Favourite beers"
-                  onBeerClick={this.onBeerClick}
-                  onCheckBoxChange={this.onCheckBoxChange}
-                  beersInCrateIds={this.state.beersInCrateIds}
-                />
-              </Route>
-              <Route path="/join">
-                <Join />
-              </Route>
-            </Switch>
-            <Footer />
-          </Router>
-        </div>
+        {/* <div className="container"> */}
+        <Router>
+          <Header
+            navSelected={this.state.navSelected}
+            onNavbarClick={this.onNavbarClick}
+          />
+          <Modal
+            beer={this.state.selectedBeer}
+            type={'exampleModal'}
+            onCheckBoxChange={this.onCheckBoxChange}
+            onModalButtonClick={this.onModalButtonClick}
+          />
+          <Jumbotron />
+          <Switch>
+            <Route exact path="/">
+              <Content
+                beerList={this.state.beerList}
+                sortBy={this.state.sortBy}
+                onSelectMenuChange={this.onSelectMenuChange}
+                title="Beer"
+                onBeerClick={this.onBeerClick}
+                onCheckBoxChange={this.onCheckBoxChange}
+                beersInCrateIds={this.state.beersInCrateIds}
+              />
+            </Route>
+            <Route path="/beerster">
+              <Content
+                beerList={this.state.beerList}
+                sortBy={this.state.sortBy}
+                onSelectMenuChange={this.onSelectMenuChange}
+                title="Beer"
+                onBeerClick={this.onBeerClick}
+                onCheckBoxChange={this.onCheckBoxChange}
+                beersInCrateIds={this.state.beersInCrateIds}
+              />
+            </Route>
+            <Route path="/home">
+              <Content
+                beerList={this.state.beerList}
+                sortBy={this.state.sortBy}
+                onSelectMenuChange={this.onSelectMenuChange}
+                title="Beer"
+                onBeerClick={this.onBeerClick}
+                onCheckBoxChange={this.onCheckBoxChange}
+                beersInCrateIds={this.state.beersInCrateIds}
+              />
+            </Route>
+            <Route path="/favorites">
+              <Content
+                beerList={this.state.beerList.filter((beer) => beer.isChecked === true)}
+                sortBy={this.state.sortBy}
+                onSelectMenuChange={this.onSelectMenuChange}
+                title="My Favourite beers"
+                onBeerClick={this.onBeerClick}
+                onCheckBoxChange={this.onCheckBoxChange}
+                beersInCrateIds={this.state.beersInCrateIds}
+              />
+            </Route>
+            <Route path="/join">
+              <Join />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+        {/* </div> */}
       </>
     );
   }

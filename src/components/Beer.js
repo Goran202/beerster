@@ -27,10 +27,10 @@ const Beer = (props) => {
                 <img src={props.beer.image_url} className="card-img" alt="..." />
               </div>
               <div className="col-10">
-                <div className="card-body">
-                  <h5 className="card-title">{props.beer.name}</h5>
-                  <p className="card-text">IBU: {props.beer.ibu}%</p>
-                  <p className="card-text">ABV: {props.beer.abv}%</p>
+                <div className="card-body p-0 pt-4">
+                  <h5 className="card-title mb-0">{props.beer.name}</h5>
+                  <p className="card-text mb-0">IBU: {props.beer.ibu}%</p>
+                  <p className="card-text mb-0">ABV: {props.beer.abv}%</p>
                 </div>
               </div>
             </div>
