@@ -83,9 +83,12 @@ const Beers = (props) => {
 
   return (
     <>
-      <div className="d-block d-sm-block d-md-none">{renderCardsCarousel()}</div>
+      {/* <div className="d-block d-sm-block d-md-none">{renderCardsCarousel()}</div> */}
       <div className="container-fluid d-none d-md-block">
         <div className="row ">{renderCards()}</div>
+      </div>
+      <div className="d-block d-sm-block d-md-none">
+        <div className="">{renderCardsCarousel()}</div>
       </div>
     </>
   );

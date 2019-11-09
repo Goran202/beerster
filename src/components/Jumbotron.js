@@ -18,9 +18,9 @@ const Jumbotron = () => {
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
             <h5
               className="text-white"
-              style={{
-                fontSize: '2vw',
-              }}
+              // style={{
+              //   fontSize: '2vw',
+              // }}
             >
               THE BEERSTER PRO 2.0
             </h5>
@@ -28,11 +28,11 @@ const Jumbotron = () => {
           <br />
           <br />
           <br />
-          <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+          <div className="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 mx-auto">
             <h1
               className="text-white"
               style={{
-                fontSize: '6vw',
+                fontSize: '7vw',
               }}
             >
               JOIN OUR FAMOUS BEERUP!

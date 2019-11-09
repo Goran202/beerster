@@ -14,7 +14,7 @@ const Content = (props) => (
     }}
   >
     <div className="row">
-      <div className="col-8 col-sm-8 col-md-8 col-lg-9 col-xl-9">
+      <div className="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
         <h2>{props.title}</h2>
         <Sort onSelectMenuChange={props.onSelectMenuChange} />
 
@@ -25,7 +25,7 @@ const Content = (props) => (
           onCheckBoxChange={props.onCheckBoxChange}
         />
       </div>
-      <div className="col-8 col-sm-8 col-md-4 col-lg-3 col-xl-3">
+      <div className="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
         <h2>CRATE</h2>
         <Crate beerList={props.beerList} beersInCrateIds={props.beersInCrateIds} />
       </div>
