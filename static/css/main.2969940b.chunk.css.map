@@ -1,1 +1,0 @@
-{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,KACE,qBAAuB,CACvB,iEACF","file":"main.2969940b.chunk.css","sourcesContent":["body {\n  background-color: black;\n  background-image: url('./assets/pattern.svg');\n}\n\n/* -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover; */\n"]}
