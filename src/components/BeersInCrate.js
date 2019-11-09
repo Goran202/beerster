@@ -8,7 +8,7 @@ const BeersInCrate = (props) => (
       <div
         style={{
           display: 'inline-block',
-          padding: '5px',
+          padding: '4px',
         }}
         key={uuid.v4()}
       >

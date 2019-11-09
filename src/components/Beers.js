@@ -38,7 +38,7 @@ const Beers = (props) => {
     <div
       id="carouselExampleControls"
       class="carousel slide"
-      data-ride="carousel"
+      // data-ride="carousel"
       data-touch="true"
     >
       <div class="carousel-inner">

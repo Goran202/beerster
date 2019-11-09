@@ -12,7 +12,7 @@ const Modal = (props) => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div className="modal-content">
             {' '}
             <a
@@ -24,10 +24,10 @@ const Modal = (props) => {
             </a>
             <div className="card" style={{}}>
               <div className="row no-gutters">
-                <div className="col-md-2" style={{ paddingTop: '40px' }}>
+                <div className="col-2" style={{ paddingTop: '40px' }}>
                   <img className="card-img-top" src={props.beer.image_url} alt="Card" />
                 </div>
-                <div className="col-md-10">
+                <div className="col-10">
                   <div className="card-body">
                     <h4 className="card-title">{props.beer.name}</h4>
                     <p className="card-text">IBU: {props.beer.ibu}%</p>
