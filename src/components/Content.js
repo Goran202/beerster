@@ -8,7 +8,7 @@ const Content = (props) => (
   <div
     className="container"
     style={{
-      maxWidth: '75%',
+      // width: '95%',
       backgroundColor: 'white',
       backgroundImage: `url(${pattern_background})`,
     }}
