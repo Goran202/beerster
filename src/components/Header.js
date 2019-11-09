@@ -3,7 +3,7 @@ import logo from '../assets/logo.png';
 import symbol from '../assets/symbol.png';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
   //   return <header>header</header>;
   return (
     <>
@@ -25,18 +25,30 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <Link className="nav-link" to="/home">
+              <li className="nav-item">
+                <Link
+                  to="/home"
+                  className={`nav-link${props.navSelected === 0 ? ' active' : ''}`}
+                  onClick={props.onNavbarClick}
+                >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/favorites">
+                <Link
+                  to="/favorites"
+                  className={`nav-link${props.navSelected === 1 ? ' active' : ''}`}
+                  onClick={props.onNavbarClick}
+                >
                   Favorites
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/join">
+                <Link
+                  to="/join"
+                  className={`nav-link${props.navSelected === 2 ? ' active' : ''}`}
+                  onClick={props.onNavbarClick}
+                >
                   Join
                 </Link>
               </li>

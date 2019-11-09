@@ -39,7 +39,7 @@ const Jumbotron = () => {
             </h1>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
-            <img src={illustration} class="img-fluid" alt="illustration"></img>
+            <img src={illustration} className="img-fluid" alt="illustration"></img>
           </div>
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

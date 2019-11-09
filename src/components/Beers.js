@@ -37,15 +37,14 @@ const Beers = (props) => {
   const renderCardsCarousel = () => (
     <div
       id="carouselExampleControls"
-      class="carousel slide"
-      // data-ride="carousel"
+      className="carousel slide"
+      data-ride="carousel"
       data-touch="true"
     >
-      <div class="carousel-inner">
+      <div className="carousel-inner">
         {props.beerList.map((beer, i) => {
           return (
-            // <div class="carousel-item">
-            <div class={`carousel-item${i === 0 ? ' active' : ''}`}>
+            <div className={`carousel-item${i === 0 ? ' active' : ''}`}>
               <div
                 key={uuid.v4()}
                 className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
@@ -61,22 +60,22 @@ const Beers = (props) => {
         })}
       </div>
       <a
-        class="carousel-control-prev"
+        className="carousel-control-prev"
         href="#carouselExampleControls"
         role="button"
         data-slide="prev"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="sr-only">Previous</span>
       </a>
       <a
-        class="carousel-control-next"
+        className="carousel-control-next"
         href="#carouselExampleControls"
         role="button"
         data-slide="next"
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="sr-only">Next</span>
       </a>
     </div>
   );

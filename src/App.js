@@ -23,6 +23,7 @@ class App extends Component {
       id: '',
       ingredients: { hops: [], malt: [], yeast: '' },
     },
+    navSelected: 0,
   };
 
   fetchDataFromApi = () => {
@@ -92,12 +93,33 @@ class App extends Component {
     this.setState({ sortBy: e.target.value });
   };
 
+  onNavbarClick = (e) => {
+    let selected;
+    switch (e.target.innerHTML) {
+      case 'Home':
+        selected = 0;
+        break;
+      case 'Favorites':
+        selected = 1;
+        break;
+      case 'Join':
+        selected = 2;
+        break;
+      default:
+        selected = 0;
+    }
+    this.setState({ navSelected: selected });
+  };
+
   render() {
     return (
       <>
-        <div className="container-fluid">
+        <div className="container">
           <Router>
-            <Header />
+            <Header
+              navSelected={this.state.navSelected}
+              onNavbarClick={this.onNavbarClick}
+            />
             <Modal
               beer={this.state.selectedBeer}
               type={'exampleModal'}
