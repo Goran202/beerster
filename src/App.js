@@ -149,8 +149,8 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
-              /> */}
-            </Route>
+              />
+            </Route> */}
             <Route path="/home">
               <Content
                 beerList={this.state.beerList}
