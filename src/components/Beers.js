@@ -3,6 +3,7 @@ import Beer from './Beer';
 import uuid from 'uuid';
 import bottle_final from '../assets/bottle_final.png';
 import bottle_draft from '../assets/bottle_draft.png';
+import Pagination from './Pagination';
 
 const Beers = (props) => {
   switch (props.sortBy) {
@@ -21,21 +22,28 @@ const Beers = (props) => {
   }
 
   const renderCards = () => {
-    return props.beerList
-      .slice((props.pageNumber - 1) * 15, props.pageNumber * 15)
-      .map((beer, i) => {
-        //(0,15), (15, 30), ()
-        // return props.beerList.slice(15, 30).map((beer, i) => {
-        return (
-          <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-            <Beer
-              beer={beer}
-              onBeerClick={props.onBeerClick}
-              onCheckBoxChange={props.onCheckBoxChange}
-            />
-          </div>
-        );
-      });
+    return (
+      <>
+        {props.beerList
+          .slice((props.pageNumber - 1) * 15, props.pageNumber * 15)
+          .map((beer, i) => {
+            //(0,15), (15, 30), ()
+            // return props.beerList.slice(15, 30).map((beer, i) => {
+            return (
+              <div
+                key={uuid.v4()}
+                className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+              >
+                <Beer
+                  beer={beer}
+                  onBeerClick={props.onBeerClick}
+                  onCheckBoxChange={props.onCheckBoxChange}
+                />
+              </div>
+            );
+          })}
+      </>
+    );
   };
 
   const renderCardsCarousel = () => (
@@ -85,6 +93,14 @@ const Beers = (props) => {
     <>
       {/* <div className="d-block d-sm-block d-md-none">{renderCardsCarousel()}</div> */}
       <div className="container-fluid d-none d-md-block">
+        <div className="row ">
+          <Pagination
+            typeOfList={props.typeOfList}
+            pageNumber={props.pageNumber}
+            onPaginationButtonClick={props.onPaginationButtonClick}
+            beerList={props.beerList}
+          />
+        </div>
         <div className="row ">{renderCards()}</div>
       </div>
       <div className="d-block d-sm-block d-md-none">

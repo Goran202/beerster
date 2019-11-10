@@ -25,6 +25,7 @@ class App extends Component {
     },
     navSelected: 0,
     pageNumber: 1,
+    pageNumberFavorites: 1,
   };
 
   fetchDataFromApi = () => {
@@ -112,11 +113,18 @@ class App extends Component {
     this.setState({ navSelected: selected });
   };
 
-  onPaginationButtonClick = (e) => {
+  onPaginationButtonClick = (e, typeOfList) => {
     console.log('succes');
-    console.log(e.target);
-    console.log(e.target.value);
-    this.setState({ pageNumber: e.target.value });
+    console.log(typeOfList);
+
+    // this.setState({ pageNumber: e.target.value });
+    if (typeOfList === 'Beer') {
+      console.log(typeOfList);
+      this.setState({ pageNumber: e.target.value });
+    } else if (typeOfList === 'My Favourite beers') {
+      console.log(typeOfList);
+      this.setState({ pageNumberFavorites: e.target.value });
+    }
   };
 
   render() {
@@ -188,7 +196,7 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
-                pageNumber={this.state.pageNumber}
+                pageNumber={this.state.pageNumberFavorites}
                 onPaginationButtonClick={this.onPaginationButtonClick}
               />
             </Route>

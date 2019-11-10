@@ -15,9 +15,14 @@ const Modal = (props) => {
       >
         <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div className="modal-content">
-            <div class="modal-header" style={{ borderBottom: '0 none' }}>
+            <div className="modal-header" style={{ borderBottom: '0 none' }}>
               {/* <h5 class="modal-title">Modal title</h5> */}
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
                 <img src={closeIcon} className="img-fluid" alt="closeIcon"></img>
               </button>
             </div>
