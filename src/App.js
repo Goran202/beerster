@@ -140,7 +140,7 @@ class App extends Component {
                 beersInCrateIds={this.state.beersInCrateIds}
               />
             </Route>
-            <Route path="/beerster">
+            {/* <Route path="/beerster">
               <Content
                 beerList={this.state.beerList}
                 sortBy={this.state.sortBy}
@@ -149,7 +149,7 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
-              />
+              /> */}
             </Route>
             <Route path="/home">
               <Content
