@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Header, Footer, Jumbotron, Content, Modal, Join } from './components';
 import punkApi from './apis/punkApi';
@@ -115,7 +115,8 @@ class App extends Component {
     return (
       <>
         {/* <div className="container"> */}
-        <Router basename={process.env.PUBLIC_URL}>
+        {/* <Router basename={process.env.PUBLIC_URL}> */}
+        <HashRouter basename="/">
           >
           <Header
             navSelected={this.state.navSelected}
@@ -178,7 +179,7 @@ class App extends Component {
             </Route>
           </Switch>
           <Footer />
-        </Router>
+        </HashRouter>
         {/* </div> */}
       </>
     );
