@@ -10,6 +10,12 @@ const Footer = ({ navSelected, onNavbarClick }) => (
     <footer className="footer-dark bg-dark">
       <div className="container-fluid">
         <div className="row">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a className="navbar-brand" href="#">
+            <img src={symbol} alt="symbol"></img>
+            <img src={logo} alt="logo"></img>
+          </a>
+
           {/* <Header /> */}
           <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
             <ul className="navbar-nav ml-auto">
