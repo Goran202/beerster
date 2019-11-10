@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6a8f739846fd9147527878a8c1280cf5",
+    "revision": "f6b8832dbd2094cc9e6a6286e992f062",
     "url": "/beerster/index.html"
   },
   {
-    "revision": "a2b209c5a44574ee3368",
+    "revision": "491f9fdae0a9ea99f4e6",
     "url": "/beerster/static/css/main.4ca99739.chunk.css"
   },
   {
-    "revision": "b8ae8990489a477a2196",
-    "url": "/beerster/static/js/2.6481f133.chunk.js"
+    "revision": "8eb276759cb4ac462c0f",
+    "url": "/beerster/static/js/2.9797307a.chunk.js"
   },
   {
-    "revision": "a2b209c5a44574ee3368",
-    "url": "/beerster/static/js/main.50590819.chunk.js"
+    "revision": "491f9fdae0a9ea99f4e6",
+    "url": "/beerster/static/js/main.63e9effd.chunk.js"
   },
   {
     "revision": "c07621cbb249eacc91fa",
