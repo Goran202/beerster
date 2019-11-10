@@ -1,13 +1,48 @@
 import React from 'react';
 import Header from './Header';
 import SocialMedia from './SocialMedia';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
+import symbol from '../assets/symbol.png';
 
-const Footer = () => (
+const Footer = ({ navSelected, onNavbarClick }) => (
   <div className="container">
     <footer className="footer-dark bg-dark">
       <div className="container-fluid">
         <div className="row">
-          <Header />
+          {/* <Header /> */}
+          <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link
+                  to="/home"
+                  className={`nav-link${navSelected === 0 ? ' active' : ''}`}
+                  onClick={onNavbarClick}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/favorites"
+                  className={`nav-link${navSelected === 1 ? ' active' : ''}`}
+                  onClick={onNavbarClick}
+                >
+                  Favorites
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/join"
+                  className={`nav-link${navSelected === 2 ? ' active' : ''}`}
+                  onClick={onNavbarClick}
+                >
+                  Join
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <SocialMedia />
         </div>
       </div>

@@ -59,7 +59,7 @@ const Modal = ({ beer, onCheckBoxChange, onModalButtonClick }) => {
                       <button
                         type="button"
                         className="btn btn-secondary"
-                        onClick={() => onModalButtonClick(beer)}
+                        onClick={() => onModalButtonClick(beer.id)}
                       >
                         ADD TO CRATE
                       </button>

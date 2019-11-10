@@ -85,10 +85,13 @@ class App extends Component {
     this.updateLocalStorage(beer_arg.id);
   };
 
-  onModalButtonClick = (beer_arg) => {
+  onModalButtonClick = (beerId_arg) => {
     let ids = this.state.beersInCrateIds;
-    ids.push(beer_arg.id);
+    ids.push(beerId_arg);
     this.setState({ beersInCrateIds: ids });
+    console.log(this.state.beersInCrateIds);
+    // console.log(e);
+    console.log(beerId_arg);
   };
 
   onSelectMenuChange = (e) => {

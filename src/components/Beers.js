@@ -27,26 +27,18 @@ const Beers = ({
       beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
 
-  const renderCards = () => {
-    return (
-      <>
-        {beerList.slice((pageNumber - 1) * 15, pageNumber * 15).map((beer, i) => {
-          return (
-            <div
-              key={uuid.v4()}
-              className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
-            >
-              <Beer
-                beer={beer}
-                onBeerClick={onBeerClick}
-                onCheckBoxChange={onCheckBoxChange}
-              />
-            </div>
-          );
-        })}
-      </>
-    );
-  };
+  const renderCards = () =>
+    beerList.slice((pageNumber - 1) * 15, pageNumber * 15).map((beer, i) => {
+      return (
+        <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+          <Beer
+            beer={beer}
+            onBeerClick={onBeerClick}
+            onCheckBoxChange={onCheckBoxChange}
+          />
+        </div>
+      );
+    });
 
   const renderCardsCarousel = () => (
     <div
@@ -93,7 +85,6 @@ const Beers = ({
 
   return (
     <>
-      {/* <div className="d-block d-sm-block d-md-none">{renderCardsCarousel()}</div> */}
       <div className="container-fluid d-none d-md-block">
         <div className="row ">
           <Pagination

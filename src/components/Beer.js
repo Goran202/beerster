@@ -3,7 +3,9 @@ import HeartImage from './HeartImage';
 
 const Beer = ({ beer, onBeerClick, onCheckBoxChange }) => {
   const onDragStart = (e) => {
+    e.persist();
     e.dataTransfer.setData('text/plain', beer.id);
+    console.log(e.dataTransfer.getData('text'));
   };
 
   return (
@@ -12,7 +14,6 @@ const Beer = ({ beer, onBeerClick, onCheckBoxChange }) => {
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a
           style={{ position: 'absolute', zIndex: '3' }}
-          // type="button"
           onClick={() => onCheckBoxChange(beer)}
         >
           <HeartImage isChecked={beer.isChecked} />
