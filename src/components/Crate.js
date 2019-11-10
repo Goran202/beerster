@@ -4,21 +4,25 @@ import BeersInCrate from './BeersInCrate';
 
 const Crate = (props) => (
   <>
-    <nav>
-      <a className="navbar-brand" href="#">
-        ONE
-      </a>
-      <a className="navbar-brand" href="#">
-        TWO
-      </a>
-      <a className="navbar-brand" href="#">
-        THREE
-      </a>
-    </nav>
+    <ul className="nav">
+      <li className="nav-item">
+        <a className="nav-link active" href="#/home">
+          ONE
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link disabled" href="#/home">
+          TWO
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link disabled" href="#/home">
+          THREE
+        </a>
+      </li>
+    </ul>{' '}
     <div
       onDragOver={(e) => e.preventDefault()}
-      // onDrop={() => props.onModalButtonClick(props.beer)}
-      // onDrop={(e) => console.log(e.dataTransfer.getData('text'))}
       onDrop={(e) => props.onDropBeerToCrate(e.dataTransfer.getData('text'))}
       className="rotatable"
       style={{

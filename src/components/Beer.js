@@ -5,10 +5,7 @@ const Beer = (props) => {
   console.log('testing rendering');
 
   const onDragStart = (e) => {
-    console.log('dragging');
     e.dataTransfer.setData('text/plain', props.beer.id);
-    console.log(e.target);
-    console.log(props.beer.id);
   };
 
   return (

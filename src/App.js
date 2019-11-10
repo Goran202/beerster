@@ -108,7 +108,7 @@ class App extends Component {
         selected = 2;
         break;
       default:
-        selected = 0;
+        selected = 2;
     }
     this.setState({ navSelected: selected });
   };
@@ -144,7 +144,7 @@ class App extends Component {
             onCheckBoxChange={this.onCheckBoxChange}
             onModalButtonClick={this.onModalButtonClick}
           />
-          <Jumbotron />
+          <Jumbotron onJoinClick={this.onNavbarClick} />
           <Switch>
             <Route exact path="/">
               <Content
