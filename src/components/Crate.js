@@ -16,6 +16,10 @@ const Crate = (props) => (
       </a>
     </nav>
     <div
+      onDragOver={(e) => e.preventDefault()}
+      // onDrop={() => props.onModalButtonClick(props.beer)}
+      // onDrop={(e) => console.log(e.dataTransfer.getData('text'))}
+      onDrop={(e) => props.onDropBeerToCrate(e.dataTransfer.getData('text'))}
       className="rotatable"
       style={{
         display: 'inline-block',

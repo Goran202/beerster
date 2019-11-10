@@ -3,9 +3,18 @@ import HeartImage from './HeartImage';
 
 const Beer = (props) => {
   console.log('testing rendering');
+
+  const onDragStart = (e) => {
+    console.log('dragging');
+    e.dataTransfer.setData('text/plain', props.beer.id);
+    console.log(e.target);
+    console.log(props.beer.id);
+  };
+
   return (
     <div className="embed-responsive embed-responsive-1by1 text-center">
       <div className="embed-responsive-item">
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a
           style={{ position: 'absolute', zIndex: '3' }}
           // type="button"
@@ -21,7 +30,12 @@ const Beer = (props) => {
           data-target="#exampleModal"
           onClick={() => props.onBeerClick(props.beer.id)}
         >
-          <div className="card mb-5" style={{ border: '0', backgroundColor: 'white' }}>
+          <div
+            draggable="true"
+            onDragStart={onDragStart}
+            className="card mb-5"
+            style={{ border: '0', backgroundColor: 'white' }}
+          >
             <div className="row no-gutters">
               <div className="col-2" style={{ paddingTop: '40px' }}>
                 <img src={props.beer.image_url} className="card-img" alt="..." />

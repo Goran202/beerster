@@ -157,6 +157,7 @@ class App extends Component {
                 beersInCrateIds={this.state.beersInCrateIds}
                 pageNumber={this.state.pageNumber}
                 onPaginationButtonClick={this.onPaginationButtonClick}
+                onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
             {/* <Route path="/beerster">
@@ -170,6 +171,7 @@ class App extends Component {
                 beersInCrateIds={this.state.beersInCrateIds}
                 pageNumber={this.state.pageNumber}
                 onPaginationButtonClick={this.onPaginationButtonClick}
+                onDropBeerToCrate={this.onModalButtonClick}
 
 
               />
@@ -185,6 +187,7 @@ class App extends Component {
                 beersInCrateIds={this.state.beersInCrateIds}
                 pageNumber={this.state.pageNumber}
                 onPaginationButtonClick={this.onPaginationButtonClick}
+                onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
             <Route path="/favorites">
@@ -198,6 +201,7 @@ class App extends Component {
                 beersInCrateIds={this.state.beersInCrateIds}
                 pageNumber={this.state.pageNumberFavorites}
                 onPaginationButtonClick={this.onPaginationButtonClick}
+                onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
             <Route path="/join">

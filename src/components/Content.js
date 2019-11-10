@@ -38,7 +38,11 @@ const Content = (props) => {
         </div>
         <div className="col-12 col-sm-12 col-md-5 col-lg-3 col-xl-3">
           <h2>CRATE</h2>
-          <Crate beerList={props.beerList} beersInCrateIds={props.beersInCrateIds} />
+          <Crate
+            beerList={props.beerList}
+            beersInCrateIds={props.beersInCrateIds}
+            onDropBeerToCrate={props.onDropBeerToCrate}
+          />
         </div>
       </div>
     </div>
