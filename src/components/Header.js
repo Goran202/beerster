@@ -1,7 +1,4 @@
 import React from 'react';
-import logo from '../assets/logo.png';
-import symbol from '../assets/symbol.png';
-import { Link } from 'react-router-dom';
 import BeerLogo from './BeerLogo';
 import NavLinks from './NavLinks';
 
