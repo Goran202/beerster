@@ -11,3 +11,4 @@ export { default as Join } from './Join';
 export { default as Jumbotron } from './Jumbotron';
 export { default as Modal } from './Modal';
 export { default as SocialMedia } from './SocialMedia';
+export { default as Pagination } from './Pagination';

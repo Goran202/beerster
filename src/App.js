@@ -24,11 +24,12 @@ class App extends Component {
       ingredients: { hops: [], malt: [], yeast: '' },
     },
     navSelected: 0,
+    pageNumber: 1,
   };
 
   fetchDataFromApi = () => {
     punkApi
-      .get('beers')
+      .get('beers?page=1&per_page=80')
       .then((response) => {
         this.addIsCheckedProperty(
           response.data,
@@ -111,6 +112,13 @@ class App extends Component {
     this.setState({ navSelected: selected });
   };
 
+  onPaginationButtonClick = (e) => {
+    console.log('succes');
+    console.log(e.target);
+    console.log(e.target.value);
+    this.setState({ pageNumber: e.target.value });
+  };
+
   render() {
     return (
       <>
@@ -139,6 +147,8 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
+                pageNumber={this.state.pageNumber}
+                onPaginationButtonClick={this.onPaginationButtonClick}
               />
             </Route>
             {/* <Route path="/beerster">
@@ -150,6 +160,10 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
+                pageNumber={this.state.pageNumber}
+                onPaginationButtonClick={this.onPaginationButtonClick}
+
+
               />
             </Route> */}
             <Route path="/home">
@@ -161,6 +175,8 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
+                pageNumber={this.state.pageNumber}
+                onPaginationButtonClick={this.onPaginationButtonClick}
               />
             </Route>
             <Route path="/favorites">
@@ -172,6 +188,8 @@ class App extends Component {
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
+                pageNumber={this.state.pageNumber}
+                onPaginationButtonClick={this.onPaginationButtonClick}
               />
             </Route>
             <Route path="/join">

@@ -21,17 +21,21 @@ const Beers = (props) => {
   }
 
   const renderCards = () => {
-    return props.beerList.map((beer, i) => {
-      return (
-        <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
-          <Beer
-            beer={beer}
-            onBeerClick={props.onBeerClick}
-            onCheckBoxChange={props.onCheckBoxChange}
-          />
-        </div>
-      );
-    });
+    return props.beerList
+      .slice((props.pageNumber - 1) * 15, props.pageNumber * 15)
+      .map((beer, i) => {
+        //(0,15), (15, 30), ()
+        // return props.beerList.slice(15, 30).map((beer, i) => {
+        return (
+          <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+            <Beer
+              beer={beer}
+              onBeerClick={props.onBeerClick}
+              onCheckBoxChange={props.onCheckBoxChange}
+            />
+          </div>
+        );
+      });
   };
 
   const renderCardsCarousel = () => (
