@@ -115,7 +115,8 @@ class App extends Component {
     return (
       <>
         {/* <div className="container"> */}
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
+          >
           <Header
             navSelected={this.state.navSelected}
             onNavbarClick={this.onNavbarClick}
