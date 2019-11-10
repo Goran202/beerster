@@ -94,7 +94,7 @@ const Join = () => {
               </div>
             </div>
 
-            <a href="#">
+            <a href="#/join">
               {/* <button type="button" className="btn btn-outline-secondary btn-lg"></button> */}
               <img src={button_primary} alt="buttonPrimary"></img>
             </a>

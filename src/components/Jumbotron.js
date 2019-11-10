@@ -43,7 +43,7 @@ const Jumbotron = () => {
           </div>
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a href="/join">
+            <a href="#/join">
               {/* <button type="button" className="btn btn-outline-secondary btn-lg"></button> */}
               <img src={button_primary} alt="buttonPrimary"></img>
             </a>
