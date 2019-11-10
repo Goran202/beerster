@@ -1,47 +1,49 @@
 import React from 'react';
 import Beer from './Beer';
 import uuid from 'uuid';
-import bottle_final from '../assets/bottle_final.png';
-import bottle_draft from '../assets/bottle_draft.png';
 import Pagination from './Pagination';
 
-const Beers = (props) => {
-  switch (props.sortBy) {
+const Beers = ({
+  beerList,
+  pageNumber,
+  typeOfList,
+  sortBy,
+  onBeerClick,
+  onCheckBoxChange,
+  onPaginationButtonClick,
+}) => {
+  switch (sortBy) {
     case 'name':
-      props.beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
+      beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
       break;
     case 'ibu':
       console.log('IBU');
-      props.beerList.sort((a, b) => a.ibu - b.ibu);
+      beerList.sort((a, b) => a.ibu - b.ibu);
       break;
     case 'abv':
-      props.beerList.sort((a, b) => a.abv - b.abv);
+      beerList.sort((a, b) => a.abv - b.abv);
       break;
     default:
-      props.beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
+      beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
   }
 
   const renderCards = () => {
     return (
       <>
-        {props.beerList
-          .slice((props.pageNumber - 1) * 15, props.pageNumber * 15)
-          .map((beer, i) => {
-            //(0,15), (15, 30), ()
-            // return props.beerList.slice(15, 30).map((beer, i) => {
-            return (
-              <div
-                key={uuid.v4()}
-                className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
-              >
-                <Beer
-                  beer={beer}
-                  onBeerClick={props.onBeerClick}
-                  onCheckBoxChange={props.onCheckBoxChange}
-                />
-              </div>
-            );
-          })}
+        {beerList.slice((pageNumber - 1) * 15, pageNumber * 15).map((beer, i) => {
+          return (
+            <div
+              key={uuid.v4()}
+              className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+            >
+              <Beer
+                beer={beer}
+                onBeerClick={onBeerClick}
+                onCheckBoxChange={onCheckBoxChange}
+              />
+            </div>
+          );
+        })}
       </>
     );
   };
@@ -54,14 +56,14 @@ const Beers = (props) => {
       data-touch="true"
     >
       <div className="carousel-inner">
-        {props.beerList.map((beer, i) => {
+        {beerList.map((beer, i) => {
           return (
             <div key={uuid.v4()} className={`carousel-item${i === 0 ? ' active' : ''}`}>
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                 <Beer
                   beer={beer}
-                  onBeerClick={props.onBeerClick}
-                  onCheckBoxChange={props.onCheckBoxChange}
+                  onBeerClick={onBeerClick}
+                  onCheckBoxChange={onCheckBoxChange}
                 />
               </div>
             </div>
@@ -95,10 +97,10 @@ const Beers = (props) => {
       <div className="container-fluid d-none d-md-block">
         <div className="row ">
           <Pagination
-            typeOfList={props.typeOfList}
-            pageNumber={props.pageNumber}
-            onPaginationButtonClick={props.onPaginationButtonClick}
-            beerList={props.beerList}
+            typeOfList={typeOfList}
+            pageNumber={pageNumber}
+            onPaginationButtonClick={onPaginationButtonClick}
+            beerList={beerList}
           />
         </div>
         <div className="row ">{renderCards()}</div>

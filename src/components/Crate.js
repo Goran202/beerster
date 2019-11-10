@@ -2,11 +2,11 @@ import React from 'react';
 import crate from '../assets/crate.png';
 import BeersInCrate from './BeersInCrate';
 
-const Crate = (props) => (
+const Crate = ({ beerList, onDropBeerToCrate, beersInCrateIds }) => (
   <>
     <ul className="nav">
       <li className="nav-item">
-        <a className="nav-link active" href="#/home">
+        <a className="nav-link disabled" href="#/home">
           ONE
         </a>
       </li>
@@ -23,7 +23,7 @@ const Crate = (props) => (
     </ul>{' '}
     <div
       onDragOver={(e) => e.preventDefault()}
-      onDrop={(e) => props.onDropBeerToCrate(e.dataTransfer.getData('text'))}
+      onDrop={(e) => onDropBeerToCrate(e.dataTransfer.getData('text'))}
       className="rotatable"
       style={{
         display: 'inline-block',
@@ -38,7 +38,7 @@ const Crate = (props) => (
           padding: '10px',
         }}
       >
-        <BeersInCrate beerList={props.beerList} beersInCrateIds={props.beersInCrateIds} />
+        <BeersInCrate beerList={beerList} beersInCrateIds={beersInCrateIds} />
       </div>
     </div>
     <blockquote className="blockquote text-center">

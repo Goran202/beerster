@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 
 import { Header, Footer, Jumbotron, Content, Modal, Join } from './components';
 import punkApi from './apis/punkApi';
@@ -114,10 +114,6 @@ class App extends Component {
   };
 
   onPaginationButtonClick = (e, typeOfList) => {
-    console.log('succes');
-    console.log(typeOfList);
-
-    // this.setState({ pageNumber: e.target.value });
     if (typeOfList === 'Beer') {
       console.log(typeOfList);
       this.setState({ pageNumber: e.target.value });
@@ -130,7 +126,6 @@ class App extends Component {
   render() {
     return (
       <>
-        {/* <div className="container"> */}
         {/* <Router basename={process.env.PUBLIC_URL}> */}
         <HashRouter basename="/">
           >
@@ -160,22 +155,6 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            {/* <Route path="/beerster">
-              <Content
-                beerList={this.state.beerList}
-                sortBy={this.state.sortBy}
-                onSelectMenuChange={this.onSelectMenuChange}
-                title="Beer"
-                onBeerClick={this.onBeerClick}
-                onCheckBoxChange={this.onCheckBoxChange}
-                beersInCrateIds={this.state.beersInCrateIds}
-                pageNumber={this.state.pageNumber}
-                onPaginationButtonClick={this.onPaginationButtonClick}
-                onDropBeerToCrate={this.onModalButtonClick}
-
-
-              />
-            </Route> */}
             <Route path="/home">
               <Content
                 beerList={this.state.beerList}

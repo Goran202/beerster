@@ -1,29 +1,14 @@
 import React from 'react';
 import illustration from '../assets/illustration.png';
 import button_primary from '../assets/button_primary.png';
-import pattern from '../assets/pattern.png';
 
-const Jumbotron = (props) => {
+const Jumbotron = ({ onJoinClick }) => {
   return (
-    <div
-      className="container"
-      style={
-        {
-          // backgroundImage: `url(${pattern})`,
-        }
-      }
-    >
+    <div className="container">
       <div className="jumbotrone-container">
         <div className="row text-center">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
-            <h5
-              className="text-white"
-              // style={{
-              //   fontSize: '2vw',
-              // }}
-            >
-              THE BEERSTER PRO 2.0
-            </h5>
+            <h5 className="text-white">THE BEERSTER PRO 2.0</h5>
           </div>
           <br />
           <br />
@@ -43,7 +28,7 @@ const Jumbotron = (props) => {
           </div>
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a href="#/join" onClick={props.onJoinClick}>
+            <a href="#/join" onClick={onJoinClick}>
               {/* <button type="button" className="btn btn-outline-secondary btn-lg"></button> */}
               <img src={button_primary} alt="buttonPrimary"></img>
             </a>

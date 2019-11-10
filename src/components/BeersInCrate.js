@@ -2,9 +2,9 @@ import React from 'react';
 import BeerInCrateImg from './BeerInCrateImg';
 import uuid from 'uuid';
 
-const BeersInCrate = (props) => (
+const BeersInCrate = ({ beersInCrateIds }) => (
   <div>
-    {props.beersInCrateIds.slice(0, 20).map((beer, i) => (
+    {beersInCrateIds.slice(0, 20).map((beer, i) => (
       <div
         style={{
           display: 'inline-block',

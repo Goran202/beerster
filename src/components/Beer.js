@@ -1,11 +1,9 @@
 import React from 'react';
 import HeartImage from './HeartImage';
 
-const Beer = (props) => {
-  console.log('testing rendering');
-
+const Beer = ({ beer, onBeerClick, onCheckBoxChange }) => {
   const onDragStart = (e) => {
-    e.dataTransfer.setData('text/plain', props.beer.id);
+    e.dataTransfer.setData('text/plain', beer.id);
   };
 
   return (
@@ -15,9 +13,9 @@ const Beer = (props) => {
         <a
           style={{ position: 'absolute', zIndex: '3' }}
           // type="button"
-          onClick={() => props.onCheckBoxChange(props.beer)}
+          onClick={() => onCheckBoxChange(beer)}
         >
-          <HeartImage isChecked={props.beer.isChecked} />
+          <HeartImage isChecked={beer.isChecked} />
         </a>
 
         <button
@@ -25,7 +23,7 @@ const Beer = (props) => {
           type="button"
           data-toggle="modal"
           data-target="#exampleModal"
-          onClick={() => props.onBeerClick(props.beer.id)}
+          onClick={() => onBeerClick(beer.id)}
         >
           <div
             draggable="true"
@@ -35,13 +33,13 @@ const Beer = (props) => {
           >
             <div className="row no-gutters">
               <div className="col-2" style={{ paddingTop: '40px' }}>
-                <img src={props.beer.image_url} className="card-img" alt="..." />
+                <img src={beer.image_url} className="card-img" alt="..." />
               </div>
               <div className="col-10">
                 <div className="card-body p-0 pt-4">
-                  <h5 className="card-title mb-0">{props.beer.name}</h5>
-                  <p className="card-text mb-0">IBU: {props.beer.ibu}%</p>
-                  <p className="card-text mb-0">ABV: {props.beer.abv}%</p>
+                  <h5 className="card-title mb-0">{beer.name}</h5>
+                  <p className="card-text mb-0">IBU: {beer.ibu}%</p>
+                  <p className="card-text mb-0">ABV: {beer.abv}%</p>
                 </div>
               </div>
             </div>

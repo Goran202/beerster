@@ -3,11 +3,9 @@ import logo from '../assets/logo.png';
 import symbol from '../assets/symbol.png';
 import { Link } from 'react-router-dom';
 
-const Header = (props) => {
-  //   return <header>header</header>;
+const Header = ({ navSelected, onNavbarClick }) => {
   return (
     <>
-      {/* <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top"> */}
       <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
         <div className="container">
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -28,8 +26,8 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link
                   to="/home"
-                  className={`nav-link${props.navSelected === 0 ? ' active' : ''}`}
-                  onClick={props.onNavbarClick}
+                  className={`nav-link${navSelected === 0 ? ' active' : ''}`}
+                  onClick={onNavbarClick}
                 >
                   Home
                 </Link>
@@ -37,8 +35,8 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link
                   to="/favorites"
-                  className={`nav-link${props.navSelected === 1 ? ' active' : ''}`}
-                  onClick={props.onNavbarClick}
+                  className={`nav-link${navSelected === 1 ? ' active' : ''}`}
+                  onClick={onNavbarClick}
                 >
                   Favorites
                 </Link>
@@ -46,8 +44,8 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link
                   to="/join"
-                  className={`nav-link${props.navSelected === 2 ? ' active' : ''}`}
-                  onClick={props.onNavbarClick}
+                  className={`nav-link${navSelected === 2 ? ' active' : ''}`}
+                  onClick={onNavbarClick}
                 >
                   Join
                 </Link>

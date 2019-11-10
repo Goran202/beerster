@@ -2,7 +2,7 @@ import React from 'react';
 import HeartImage from './HeartImage';
 import closeIcon from '../assets/Close_icon@2x.png';
 
-const Modal = (props) => {
+const Modal = ({ beer, onCheckBoxChange, onModalButtonClick }) => {
   return (
     <>
       <div
@@ -29,39 +29,37 @@ const Modal = (props) => {
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
               style={{ position: 'absolute', zIndex: '3' }}
-              onClick={() => props.onCheckBoxChange(props.beer)}
+              onClick={() => onCheckBoxChange(beer)}
             >
-              <HeartImage isChecked={props.beer.isChecked} />
+              <HeartImage isChecked={beer.isChecked} />
             </a>
             <div className="modal-body">
               <div className="card" style={{ border: 'none' }}>
                 <div className="row no-gutters">
                   <div className="col-2" style={{ paddingTop: '40px' }}>
-                    <img className="card-img-top" src={props.beer.image_url} alt="Card" />
+                    <img className="card-img-top" src={beer.image_url} alt="Card" />
                   </div>
 
                   <div className="col-10">
                     <div className="card-body">
-                      <h4 className="card-title">{props.beer.name}</h4>
-                      <p className="card-text">IBU: {props.beer.ibu}%</p>
-                      <p className="card-text">ABV: {props.beer.abv}%</p>
+                      <h4 className="card-title">{beer.name}</h4>
+                      <p className="card-text">IBU: {beer.ibu}%</p>
+                      <p className="card-text">ABV: {beer.abv}%</p>
                       <p className="card-text">
                         INGREDIENTS: <br />
-                        HOPS:{' '}
-                        {props.beer.ingredients.hops.map((item) => item.name + ', ')}
+                        HOPS: {beer.ingredients.hops.map((item) => item.name + ', ')}
                         <br />
-                        MALT:{' '}
-                        {props.beer.ingredients.malt.map((item) => item.name + ', ')}
+                        MALT: {beer.ingredients.malt.map((item) => item.name + ', ')}
                         <br />
-                        YEAST:{props.beer.ingredients.yeast}
+                        YEAST:{beer.ingredients.yeast}
                         <br />
                       </p>
-                      <p className="card-text">{props.beer.description}</p>
+                      <p className="card-text">{beer.description}</p>
 
                       <button
                         type="button"
                         className="btn btn-secondary"
-                        onClick={() => props.onModalButtonClick(props.beer)}
+                        onClick={() => onModalButtonClick(beer)}
                       >
                         ADD TO CRATE
                       </button>
