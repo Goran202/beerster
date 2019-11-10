@@ -5,7 +5,12 @@ import NavLinks from "./NavLinks";
 const Header = ({ navSelected, onNavbarClick }) => {
   return (
     <>
-      <nav className='navbar navbar-expand-md navbar-dark sticky-top'>
+      <nav
+        className='navbar navbar-expand-md navbar-dark sticky-top'
+        style={{
+          backgroundColor: "black"
+        }}
+      >
         <div className='container'>
           <BeerLogo />{" "}
           <button
@@ -24,7 +29,6 @@ const Header = ({ navSelected, onNavbarClick }) => {
               textAlign: "left",
               fontFamily: "Montserrat, sans-serif",
               fontWeight: "700",
-              lineHeight: "0.9",
               letterSpacing: "0.1em"
             }}
           >
