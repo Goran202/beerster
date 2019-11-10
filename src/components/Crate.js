@@ -1,50 +1,62 @@
-import React from 'react';
-import crate from '../assets/crate.png';
-import BeersInCrate from './BeersInCrate';
+import React from "react";
+import crate from "../assets/crate.png";
+import BeersInCrate from "./BeersInCrate";
 
 const Crate = ({ beerList, onDropBeerToCrate, beersInCrateIds }) => (
   <>
-    <ul className="nav">
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#/home">
-          ONE
+    <ul className='nav'>
+      <li className='nav-item'>
+        <a
+          className='nav-link disabled'
+          href='#/home'
+          style={{ padding: "5px" }}
+        >
+          <p>ONE</p>
         </a>
       </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#/home">
-          TWO
+      <li className='nav-item'>
+        <a
+          className='nav-link disabled'
+          href='#/home'
+          style={{ padding: "5px" }}
+        >
+          <p>TWO</p>
         </a>
       </li>
-      <li className="nav-item">
-        <a className="nav-link disabled" href="#/home">
-          THREE
+      <li className='nav-item'>
+        <a
+          className='nav-link disabled'
+          href='#/home'
+          style={{ padding: "5px" }}
+        >
+          <p>THREE</p>
         </a>
       </li>
-    </ul>{' '}
+    </ul>{" "}
     <div
-      onDragOver={(e) => e.preventDefault()}
-      onDrop={(e) => onDropBeerToCrate(e.dataTransfer.getData('text'))}
-      className="rotatable"
+      onDragOver={e => e.preventDefault()}
+      onDrop={e => onDropBeerToCrate(e.dataTransfer.getData("text"))}
+      className='rotatable'
       style={{
-        display: 'inline-block',
-        position: 'relative',
+        display: "inline-block",
+        position: "relative"
       }}
     >
-      <img src={crate} alt="crate" style={{ maxWidth: '100%' }}></img>
+      <img src={crate} alt='crate' style={{ maxWidth: "100%" }}></img>
       <div
         style={{
-          position: 'absolute',
-          top: '0%',
-          padding: '10px',
+          position: "absolute",
+          top: "0%",
+          padding: "10px"
         }}
       >
         <BeersInCrate beerList={beerList} beersInCrateIds={beersInCrateIds} />
       </div>
     </div>
-    <blockquote className="blockquote text-center">
+    <blockquote className='blockquote text-center'>
       <p>Add a beer to have it appear in the crate.</p>
-      <footer className="blockquote-footer">
-        <cite title="Captain Obvious">Captain Obvious</cite>
+      <footer className='blockquote-footer'>
+        <cite title='Captain Obvious'>Captain Obvious</cite>
       </footer>
     </blockquote>
   </>
