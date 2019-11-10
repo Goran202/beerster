@@ -1,46 +1,46 @@
-import React, { Component } from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { HashRouter, Switch, Route } from "react-router-dom";
 
-import { Header, Footer, Jumbotron, Content, Modal, Join } from './components';
-import punkApi from './apis/punkApi';
+import { Header, Footer, Jumbotron, Content, Modal, Join } from "./components";
+import punkApi from "./apis/punkApi";
 
-import './style.css';
+import "./style.css";
 
 const initializeLocalStorage = () => {
-  if (!localStorage.getItem('favBeerIdListLocal')) {
-    localStorage.setItem('favBeerIdListLocal', JSON.stringify([]));
+  if (!localStorage.getItem("favBeerIdListLocal")) {
+    localStorage.setItem("favBeerIdListLocal", JSON.stringify([]));
   }
 };
 
 class App extends Component {
   state = {
     beerList: [],
-    sortBy: 'name',
+    sortBy: "name",
     beersInCrateIds: [],
     favBeerIdList: [],
     selectedBeer: {
-      name: '',
-      id: '',
-      ingredients: { hops: [], malt: [], yeast: '' },
+      name: "",
+      id: "",
+      ingredients: { hops: [], malt: [], yeast: "" }
     },
     navSelected: 0,
     pageNumber: 1,
-    pageNumberFavorites: 1,
+    pageNumberFavorites: 1
   };
 
   fetchDataFromApi = () => {
     punkApi
-      .get('beers?page=1&per_page=80')
-      .then((response) => {
+      .get("beers?page=1&per_page=80")
+      .then(response => {
         this.addIsCheckedProperty(
           response.data,
-          JSON.parse(localStorage.getItem('favBeerIdListLocal'))
+          JSON.parse(localStorage.getItem("favBeerIdListLocal"))
         );
         this.setState({
-          beerList: response.data,
+          beerList: response.data
         });
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   addIsCheckedProperty = (arrayOfObjects, arrayOfIds) => {
-    arrayOfObjects.map((object) => {
+    arrayOfObjects.map(object => {
       object.isChecked = arrayOfIds.includes(object.id)
         ? (object.isChecked = true)
         : false;
@@ -59,55 +59,55 @@ class App extends Component {
     });
   };
 
-  updateLocalStorage = (id_arg) => {
-    const local = localStorage.getItem('favBeerIdListLocal');
+  updateLocalStorage = id_arg => {
+    const local = localStorage.getItem("favBeerIdListLocal");
     let localJSON = JSON.parse(local);
     if (!localJSON.includes(id_arg)) {
       localJSON.push(id_arg);
     } else {
-      localJSON = localJSON.filter((id) => id !== id_arg);
+      localJSON = localJSON.filter(id => id !== id_arg);
     }
-    localStorage.setItem('favBeerIdListLocal', JSON.stringify(localJSON));
+    localStorage.setItem("favBeerIdListLocal", JSON.stringify(localJSON));
   };
 
-  onBeerClick = (id_arg) => {
+  onBeerClick = id_arg => {
     let tempState = { ...this.state };
-    let tempBeer = tempState.beerList.find((beer) => beer.id === id_arg);
+    let tempBeer = tempState.beerList.find(beer => beer.id === id_arg);
     this.setState({ selectedBeer: tempBeer });
   };
 
-  onCheckBoxChange = (beer_arg) => {
+  onCheckBoxChange = beer_arg => {
     let helperState = { ...this.state };
     helperState.beerList.find(
-      (beer) => beer.id === beer_arg.id
-    ).isChecked = !helperState.beerList.find((beer) => beer.id === beer_arg.id).isChecked;
+      beer => beer.id === beer_arg.id
+    ).isChecked = !helperState.beerList.find(beer => beer.id === beer_arg.id)
+      .isChecked;
     this.setState(helperState);
     this.updateLocalStorage(beer_arg.id);
   };
 
-  onModalButtonClick = (beerId_arg) => {
-    let ids = this.state.beersInCrateIds;
-    ids.push(beerId_arg);
-    this.setState({ beersInCrateIds: ids });
-    console.log(this.state.beersInCrateIds);
-    // console.log(e);
-    console.log(beerId_arg);
+  onModalButtonClick = beerId_arg => {
+    if (parseInt(beerId_arg)) {
+      let ids = this.state.beersInCrateIds;
+      ids.push(beerId_arg);
+      this.setState({ beersInCrateIds: ids });
+    }
   };
 
-  onSelectMenuChange = (e) => {
+  onSelectMenuChange = e => {
     this.setState({ sortBy: e.target.value });
   };
 
-  onNavbarClick = (e) => {
+  onNavbarClick = e => {
     let selected;
     switch (e.target.innerHTML) {
-      case 'Home':
+      case "Home":
         selected = 0;
         break;
-      case 'Favorites':
+      case "Favorites":
         selected = 1;
         break;
-      case 'Join':
+      case "Join":
         selected = 2;
         break;
       default:
@@ -117,10 +117,10 @@ class App extends Component {
   };
 
   onPaginationButtonClick = (e, typeOfList) => {
-    if (typeOfList === 'Beer') {
+    if (typeOfList === "Beer") {
       console.log(typeOfList);
       this.setState({ pageNumber: e.target.value });
-    } else if (typeOfList === 'My Favourite beers') {
+    } else if (typeOfList === "My Favourite beers") {
       console.log(typeOfList);
       this.setState({ pageNumberFavorites: e.target.value });
     }
@@ -130,7 +130,7 @@ class App extends Component {
     return (
       <>
         {/* <Router basename={process.env.PUBLIC_URL}> */}
-        <HashRouter basename="/">
+        <HashRouter basename='/'>
           >
           <Header
             navSelected={this.state.navSelected}
@@ -138,18 +138,18 @@ class App extends Component {
           />
           <Modal
             beer={this.state.selectedBeer}
-            type={'exampleModal'}
+            type={"exampleModal"}
             onCheckBoxChange={this.onCheckBoxChange}
             onModalButtonClick={this.onModalButtonClick}
           />
           <Jumbotron onJoinClick={this.onNavbarClick} />
           <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Content
                 beerList={this.state.beerList}
                 sortBy={this.state.sortBy}
                 onSelectMenuChange={this.onSelectMenuChange}
-                title="Beer"
+                title='Beer'
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
@@ -158,12 +158,12 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            <Route path="/home">
+            <Route path='/home'>
               <Content
                 beerList={this.state.beerList}
                 sortBy={this.state.sortBy}
                 onSelectMenuChange={this.onSelectMenuChange}
-                title="Beer"
+                title='Beer'
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
@@ -172,12 +172,14 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            <Route path="/favorites">
+            <Route path='/favorites'>
               <Content
-                beerList={this.state.beerList.filter((beer) => beer.isChecked === true)}
+                beerList={this.state.beerList.filter(
+                  beer => beer.isChecked === true
+                )}
                 sortBy={this.state.sortBy}
                 onSelectMenuChange={this.onSelectMenuChange}
-                title="My Favourite beers"
+                title='My Favourite beers'
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
@@ -186,7 +188,7 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            <Route path="/join">
+            <Route path='/join'>
               <Join />
             </Route>
           </Switch>
