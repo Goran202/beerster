@@ -1,31 +1,31 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const NavLinks = ({ navSelected, onNavbarClick }) => {
   return (
-    <ul className="navbar-nav ml-auto">
-      <li className="nav-item">
+    <ul className='navbar-nav ml-auto'>
+      <li className='nav-item'>
         <Link
-          to="/home"
-          className={`nav-link${navSelected === 0 ? ' active' : ''}`}
+          to='/home'
+          className={`nav-link${navSelected === 0 ? " active" : ""}`}
           onClick={onNavbarClick}
         >
           Home
         </Link>
       </li>
-      <li className="nav-item">
+      <li className='nav-item'>
         <Link
-          to="/favorites"
-          className={`nav-link${navSelected === 1 ? ' active' : ''}`}
+          to='/favorites'
+          className={`nav-link${navSelected === 1 ? " active" : ""}`}
           onClick={onNavbarClick}
         >
           Favorites
         </Link>
       </li>
-      <li className="nav-item">
+      <li className='nav-item'>
         <Link
-          to="/join"
-          className={`nav-link${navSelected === 2 ? ' active' : ''}`}
+          to='/join'
+          className={`nav-link${navSelected === 2 ? " active" : ""}`}
           onClick={onNavbarClick}
         >
           Join

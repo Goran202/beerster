@@ -1,23 +1,34 @@
-import React from 'react';
-import BeerLogo from './BeerLogo';
-import NavLinks from './NavLinks';
+import React from "react";
+import BeerLogo from "./BeerLogo";
+import NavLinks from "./NavLinks";
 
 const Header = ({ navSelected, onNavbarClick }) => {
   return (
     <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-        <div className="container">
-          <BeerLogo />{' '}
+      <nav className='navbar navbar-expand-md navbar-dark sticky-top'>
+        <div className='container'>
+          <BeerLogo />{" "}
           <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
+            className='navbar-toggler'
+            type='button'
+            data-toggle='collapse'
+            data-target='#navbarResponsive'
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className='navbar-toggler-icon'></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarResponsive">
-            <NavLinks navSelected={navSelected} onNavbarClick={onNavbarClick} />{' '}
+          <div
+            className='collapse navbar-collapse'
+            id='navbarResponsive'
+            style={{
+              fontSize: "0.8em",
+              textAlign: "left",
+              fontFamily: "Montserrat, sans-serif",
+              fontWeight: "700",
+              lineHeight: "0.9",
+              letterSpacing: "0.1em"
+            }}
+          >
+            <NavLinks navSelected={navSelected} onNavbarClick={onNavbarClick} />{" "}
           </div>
         </div>
       </nav>
