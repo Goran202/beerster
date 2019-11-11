@@ -12,7 +12,9 @@ const Header = ({ navSelected, onNavbarClick }) => {
         }}
       >
         <div className='container'>
-          <BeerLogo />{" "}
+          <a className='navbar-brand' href='#/home'>
+            <BeerLogo />
+          </a>
           <button
             className='navbar-toggler'
             type='button'
@@ -32,7 +34,12 @@ const Header = ({ navSelected, onNavbarClick }) => {
               letterSpacing: "0.1em"
             }}
           >
-            <NavLinks navSelected={navSelected} onNavbarClick={onNavbarClick} />{" "}
+            <div className='ml-auto'>
+              <NavLinks
+                navSelected={navSelected}
+                onNavbarClick={onNavbarClick}
+              />{" "}
+            </div>
           </div>
         </div>
       </nav>

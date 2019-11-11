@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavLinks = ({ navSelected, onNavbarClick }) => {
   return (
-    <ul className='navbar-nav ml-auto'>
+    <ul className='navbar-nav'>
       <li className='nav-item'>
         <Link
           to='/home'

@@ -18,16 +18,28 @@ const Footer = ({ navSelected, onNavbarClick }) => (
     >
       <div className='container-fluid'>
         <div className='row'>
-          <BeerLogo />
-          <nav
-            className='navbar navbar-expand-lg navbar-dark'
-            style={{
-              textAlign: "center"
-            }}
-          >
-            <NavLinks navSelected={navSelected} onNavbarClick={onNavbarClick} />{" "}
-          </nav>
-          <SocialMedia />
+          <div className='col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4 m-auto'>
+            <BeerLogo />
+          </div>
+          <div className='col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4'>
+            <nav
+              className='navbar navbar-expand-lg navbar-dark'
+              style={{
+                textAlign: "center",
+                margin: "auto !important"
+              }}
+            >
+              <div className='m-auto'>
+                <NavLinks
+                  navSelected={navSelected}
+                  onNavbarClick={onNavbarClick}
+                />
+              </div>
+            </nav>
+          </div>
+          <div className='col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4'>
+            <SocialMedia />
+          </div>
         </div>
       </div>
 

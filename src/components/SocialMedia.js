@@ -7,7 +7,7 @@ const SocialMedia = () => {
       style={{
         minWidth: "9vw",
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-evenly"
       }}
     >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
