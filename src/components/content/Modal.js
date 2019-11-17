@@ -1,6 +1,6 @@
-import React from 'react';
-import HeartImage from './HeartImage';
-import closeIcon from '../assets/Close_icon@2x.png';
+import React from "react";
+import HeartImage from "./HeartImage";
+import closeIcon from "../../assets/Close_icon@2x.png";
 
 const Modal = ({ beer, onCheckBoxChange, onModalButtonClick }) => {
   return (
@@ -13,9 +13,12 @@ const Modal = ({ beer, onCheckBoxChange, onModalButtonClick }) => {
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div
+          className="modal-dialog modal-lg modal-dialog-centered"
+          role="document"
+        >
           <div className="modal-content">
-            <div className="modal-header" style={{ borderBottom: '0 none' }}>
+            <div className="modal-header" style={{ borderBottom: "0 none" }}>
               {/* <h5 class="modal-title">Modal title</h5> */}
               <button
                 type="button"
@@ -23,21 +26,29 @@ const Modal = ({ beer, onCheckBoxChange, onModalButtonClick }) => {
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <img src={closeIcon} className="img-fluid" alt="closeIcon"></img>
+                <img
+                  src={closeIcon}
+                  className="img-fluid"
+                  alt="closeIcon"
+                ></img>
               </button>
             </div>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
-              style={{ position: 'absolute', zIndex: '3' }}
+              style={{ position: "absolute", zIndex: "3" }}
               onClick={() => onCheckBoxChange(beer)}
             >
               <HeartImage isChecked={beer.isChecked} />
             </a>
             <div className="modal-body">
-              <div className="card" style={{ border: 'none' }}>
+              <div className="card" style={{ border: "none" }}>
                 <div className="row no-gutters">
-                  <div className="col-2" style={{ paddingTop: '40px' }}>
-                    <img className="card-img-top" src={beer.image_url} alt="Card" />
+                  <div className="col-2" style={{ paddingTop: "40px" }}>
+                    <img
+                      className="card-img-top"
+                      src={beer.image_url}
+                      alt="Card"
+                    />
                   </div>
 
                   <div className="col-10">
@@ -47,9 +58,11 @@ const Modal = ({ beer, onCheckBoxChange, onModalButtonClick }) => {
                       <p className="card-text">ABV: {beer.abv}%</p>
                       <p className="card-text">
                         INGREDIENTS: <br />
-                        HOPS: {beer.ingredients.hops.map((item) => item.name + ', ')}
+                        HOPS:{" "}
+                        {beer.ingredients.hops.map(item => item.name + ", ")}
                         <br />
-                        MALT: {beer.ingredients.malt.map((item) => item.name + ', ')}
+                        MALT:{" "}
+                        {beer.ingredients.malt.map(item => item.name + ", ")}
                         <br />
                         YEAST:{beer.ingredients.yeast}
                         <br />

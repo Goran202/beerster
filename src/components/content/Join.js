@@ -1,6 +1,6 @@
-import React from 'react';
-import pattern_background from '../assets/pattern_background.png';
-import button_primary from '../assets/button_primary.png';
+import React from "react";
+import pattern_background from "../../assets/pattern_background.png";
+import button_primary from "../../assets/button_primary.png";
 
 const Join = () => {
   return (
@@ -9,8 +9,8 @@ const Join = () => {
       <div
         className="container"
         style={{
-          backgroundColor: 'white',
-          backgroundImage: `url(${pattern_background})`,
+          backgroundColor: "white",
+          backgroundImage: `url(${pattern_background})`
         }}
       >
         <div>

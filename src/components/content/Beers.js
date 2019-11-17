@@ -1,7 +1,7 @@
-import React from 'react';
-import Beer from './Beer';
-import uuid from 'uuid';
-import Pagination from './Pagination';
+import React from "react";
+import Beer from "./Beer";
+import uuid from "uuid";
+import Pagination from "./Pagination";
 
 const Beers = ({
   beerList,
@@ -10,17 +10,17 @@ const Beers = ({
   sortBy,
   onBeerClick,
   onCheckBoxChange,
-  onPaginationButtonClick,
+  onPaginationButtonClick
 }) => {
   switch (sortBy) {
-    case 'name':
+    case "name":
       beerList.sort((a, b) => (a.name > b.name ? 1 : -1));
       break;
-    case 'ibu':
-      console.log('IBU');
+    case "ibu":
+      console.log("IBU");
       beerList.sort((a, b) => a.ibu - b.ibu);
       break;
-    case 'abv':
+    case "abv":
       beerList.sort((a, b) => a.abv - b.abv);
       break;
     default:
@@ -30,7 +30,10 @@ const Beers = ({
   const renderCards = () =>
     beerList.slice((pageNumber - 1) * 15, pageNumber * 15).map((beer, i) => {
       return (
-        <div key={uuid.v4()} className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+        <div
+          key={uuid.v4()}
+          className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+        >
           <Beer
             beer={beer}
             onBeerClick={onBeerClick}
@@ -50,7 +53,10 @@ const Beers = ({
       <div className="carousel-inner">
         {beerList.map((beer, i) => {
           return (
-            <div key={uuid.v4()} className={`carousel-item${i === 0 ? ' active' : ''}`}>
+            <div
+              key={uuid.v4()}
+              className={`carousel-item${i === 0 ? " active" : ""}`}
+            >
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                 <Beer
                   beer={beer}

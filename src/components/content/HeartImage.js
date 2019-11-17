@@ -1,6 +1,6 @@
-import React from 'react';
-import heart_outline from '../assets/heart_outline.png';
-import heart_solid from '../assets/heart_solid.png';
+import React from "react";
+import heart_outline from "../../assets/heart_outline.png";
+import heart_solid from "../../assets/heart_solid.png";
 
 const HeartImage = ({ isChecked }) => (
   <>

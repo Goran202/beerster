@@ -1,8 +1,8 @@
-import React from 'react';
-import Beers from './Beers';
-import Crate from './Crate';
-import Sort from './Sort';
-import pattern_background from '../assets/pattern_background.png';
+import React from "react";
+import Beers from "./Beers";
+import Crate from "./Crate";
+import Sort from "./Sort";
+import pattern_background from "../../assets/pattern_background.png";
 
 const Content = ({
   title,
@@ -14,14 +14,14 @@ const Content = ({
   onPaginationButtonClick,
   onSelectMenuChange,
   beersInCrateIds,
-  onDropBeerToCrate,
+  onDropBeerToCrate
 }) => {
   return (
     <div
       className="container"
       style={{
-        backgroundColor: 'white',
-        backgroundImage: `url(${pattern_background})`,
+        backgroundColor: "white",
+        backgroundImage: `url(${pattern_background})`
       }}
     >
       <div className="row">
