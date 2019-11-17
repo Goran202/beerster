@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 
-import { Header, Footer, Jumbotron, Content, Modal, Join } from "./components";
+import {
+  Header,
+  Footer,
+  Jumbotron,
+  JumbotronMediaQuery,
+  Content,
+  Modal,
+  Join
+} from "./components";
 import punkApi from "./apis/punkApi";
 
 import "./style.css";
@@ -130,7 +138,7 @@ class App extends Component {
     return (
       <>
         {/* <Router basename={process.env.PUBLIC_URL}> */}
-        <HashRouter basename='/'>
+        <HashRouter basename="/">
           >
           <Header
             navSelected={this.state.navSelected}
@@ -144,12 +152,12 @@ class App extends Component {
           />
           <Jumbotron onJoinClick={this.onNavbarClick} />
           <Switch>
-            <Route exact path='/'>
+            <Route exact path="/">
               <Content
                 beerList={this.state.beerList}
                 sortBy={this.state.sortBy}
                 onSelectMenuChange={this.onSelectMenuChange}
-                title='Beer'
+                title="Beer"
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
@@ -158,12 +166,12 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            <Route path='/home'>
+            <Route path="/home">
               <Content
                 beerList={this.state.beerList}
                 sortBy={this.state.sortBy}
                 onSelectMenuChange={this.onSelectMenuChange}
-                title='Beer'
+                title="Beer"
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
@@ -172,14 +180,14 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            <Route path='/favorites'>
+            <Route path="/favorites">
               <Content
                 beerList={this.state.beerList.filter(
                   beer => beer.isChecked === true
                 )}
                 sortBy={this.state.sortBy}
                 onSelectMenuChange={this.onSelectMenuChange}
-                title='My Favourite beers'
+                title="My Favourite beers"
                 onBeerClick={this.onBeerClick}
                 onCheckBoxChange={this.onCheckBoxChange}
                 beersInCrateIds={this.state.beersInCrateIds}
@@ -188,7 +196,7 @@ class App extends Component {
                 onDropBeerToCrate={this.onModalButtonClick}
               />
             </Route>
-            <Route path='/join'>
+            <Route path="/join">
               <Join />
             </Route>
           </Switch>

@@ -50,13 +50,7 @@ const Crate = ({ beerList, onDropBeerToCrate, beersInCrateIds }) => (
           padding: "10px"
         }}
       >
-        {/* <div className="container">
-          <div className="row">
-            <div className="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3"> */}
         <BeersInCrate beerList={beerList} beersInCrateIds={beersInCrateIds} />
-        {/* </div>
-          </div>
-        </div> */}
       </div>
     </div>
     <blockquote className="blockquote text-center">

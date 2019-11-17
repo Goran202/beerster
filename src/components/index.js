@@ -9,6 +9,7 @@ export { default as Header } from "./HeaderAndFooter/Header";
 export { default as HeartImage } from "./content/HeartImage";
 export { default as Join } from "./content/Join";
 export { default as Jumbotron } from "./jumbotron/Jumbotron";
+export { default as JumbotronMediaQuery } from "./jumbotron/JumbotronMediaQuery";
 export { default as Modal } from "./content/Modal";
 export { default as SocialMedia } from "./HeaderAndFooter/SocialMedia";
 export { default as Pagination } from "./content/Pagination";

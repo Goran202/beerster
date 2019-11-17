@@ -3,7 +3,7 @@ import React from "react";
 const BigTitle = () => {
   return (
     <div
-      className='text-white'
+      className="text-white"
       style={{
         fontSize: "7vw",
         textAlign: "center",
